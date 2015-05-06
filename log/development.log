@@ -30201,3 +30201,31 @@ Processing by UsersController#index as HTML
   Rendered users/index.html.erb within layouts/application (329.8ms)
 Completed 200 OK in 514ms (Views: 511.6ms | ActiveRecord: 0.7ms)
   [1m[36mUser Load (12.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/" for ::1 at 2015-05-06 16:34:45 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (10.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (18.2ms)
+  [1m[35mUser Load (13.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 1266ms (Views: 1199.8ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/assets/pages.self-ce8da0bb112df31d1ff41306291706bb14e2e187de4416966bcda4cfc363fd05.css?body=1" for ::1 at 2015-05-06 16:34:47 -0700
+
+
+Started GET "/assets/custom.self-a80ff1dd3deeb925672a6cf3bfdaec6cd9756bb064ccb524f27994d3a831ef3c.css?body=1" for ::1 at 2015-05-06 16:34:47 -0700
+
+
+Started GET "/assets/court.jpg" for ::1 at 2015-05-06 16:34:47 -0700
+
+
+Started GET "/users/1/practice" for ::1 at 2015-05-06 16:34:49 -0700
+Processing by UsersController#practice as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/practice.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 116ms (Views: 113.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bcourt.jpg" for ::1 at 2015-05-06 16:34:49 -0700
