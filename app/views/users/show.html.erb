@@ -1,0 +1,48 @@
+<% provide(:title, 'Dashboard') %> 
+
+<!--Gravatar code start-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        <% provide(:title, @user.name) %>
+            <h1>
+                <%= gravatar_for @user %>
+                <%= @user.name %>
+            </h1>
+        </div>
+    </div>
+</div>
+<!--Gravatar code end-->
+      
+      <div class="jumbotron">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-xs-12 gridcase">
+                    <div class="col-md-6">
+                        <div class="thumbnail dashgrid">Jump Shot %
+                        <p id="stat1"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="thumbnail dashgrid">Free Throw %
+                        <p id="stat2"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="thumbnail dashgrid">Average Days / Week
+                        <p></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="thumbnail dashgrid">Average Shots / Practice
+                        <p></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-6 col-xs-12 graph1">
+                    <canvas id="buyers" width="600" height="400"></canvas>
+                </div>
+          </div>
+        </div>
+      </div>

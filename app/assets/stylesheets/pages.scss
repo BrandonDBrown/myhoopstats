@@ -1,0 +1,59 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar {
+    position:relative;
+    margin:0;
+}
+
+.navbar-brand a {
+    color:white;
+}
+
+.hjumbotron {
+    background-image:url(court.jpg);
+    opacity:.95;
+    background-size:cover;
+    background-color:#E9E8EB;
+    margin-bottom:0px;
+    text-align:center;
+    color:white;
+    height:600px;
+}
+
+.hjumbotron a {
+    color: white;
+}
+
+.hjumbotron a:hover {
+    text-decoration:none;   
+}
+
+.hcol-md-4 {
+    text-align:center;
+}
+
+.ycontainer {
+    width: 100%;
+    padding:80px 50px;
+    background:#f05f40;
+  }
+
+.ycontainer p, .ycontainer h2 {
+    color:white;
+}
+
+.xcontainer {
+    width: 50%;
+    padding:20px 50px;
+    text-align:center;
+  }
+
+
+
+
+
+
+
+
+

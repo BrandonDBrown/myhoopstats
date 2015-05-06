@@ -1,0 +1,9 @@
+<h1>Shot Tracker</h1>
+
+<p>Hi <%= @user.name %></p>
+
+<p>
+Welcome to Shot Tracker! Clcik on the link below to activate your account and start improving your shot:
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>

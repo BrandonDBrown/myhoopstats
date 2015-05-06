@@ -1,0 +1,84 @@
+
+
+@media (min-width: 100px) {
+  .navcontainer {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1170px) {
+  .navcontainer {
+    width: 1170px;
+  }
+}
+
+.dashjumbotron {
+    background-image:url('css/court.jpg');
+    background-size:cover;
+    background-color:#E9E8EB;
+    padding-bottom:30px;
+    margin-bottom:0;  
+}
+
+.navbar {
+
+    border:none;
+/*
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+*/
+}
+
+/*Dashboard Grid & Graph*/
+
+
+.dashgrid {
+    font-size:25px;
+    border:none;
+    border-radius:0px;
+    background-color:#C0BEC3;
+    opacity:.9;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    color:#1a1a1a;
+    padding:20px;
+    margin-bottom:30px;
+    height:263px;
+    text-align:center;
+}
+
+.dashgrid p {
+    font-size:4em;  
+}
+
+@media (min-width:990px) {
+.dashgrid p {
+    font-size:8vw;  
+}
+}
+
+canvas {
+    background-color:#C0BEC3;
+    opacity:.9;
+    padding:30px;
+    color:#1a1a1a;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    margin:0px;
+    width: 100% !important;
+    max-width: 800px;
+    height: auto !important;
+}
+
+
+.graph1 {
+    text-align:center;
+
+}
+
+
+
+
