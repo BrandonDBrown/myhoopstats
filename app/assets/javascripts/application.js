@@ -14,4 +14,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require app
+//= require mobiletouch
+//= require voice1
 //= require_tree .
