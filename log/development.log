@@ -30200,3 +30200,4 @@ Processing by UsersController#index as HTML
   Rendered users/_user.html.erb (7.0ms)
   Rendered users/index.html.erb within layouts/application (329.8ms)
 Completed 200 OK in 514ms (Views: 511.6ms | ActiveRecord: 0.7ms)
+  [1m[36mUser Load (12.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
