@@ -1,6 +1,7 @@
 <% provide(:title, 'Dashboard') %> 
 
 <!--Gravatar code start-->
+<!--
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -12,6 +13,7 @@
         </div>
     </div>
 </div>
+-->
 <!--Gravatar code end-->
       
       <div class="jumbotron">
@@ -44,5 +46,34 @@
                     <canvas id="buyers" width="600" height="400"></canvas>
                 </div>
           </div>
-        </div>
+            </div>
       </div>
+<!--START OF MICROPOST AREA-->
+<div class="container">
+       <%= render 'shared/user_info' %>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="widget-area no-padding blank">
+				<div class="status-upload">
+				    
+                        <%= render 'shared/micropost_form' %>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--END OF MICROPOST TEXT AREA-->
+        
+<!--START OF MICROPOST POSTINGS-->
+                <div class = "col-md-8">
+                    <% if @user.microposts.any? %>
+                    <h3>Microposts (<%= @user.microposts.count %>)</h3>
+                    <ol class="microposts">
+                        <%= render @microposts %>
+                    </ol>
+                    <%= will_paginate @microposts %>
+                    <% end %>
+                </div>
+        </div>
+  

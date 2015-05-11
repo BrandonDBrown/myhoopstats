@@ -27,5 +27,7 @@ var buyers = document.getElementById('buyers').getContext('2d');
 
 new Chart(buyers).Line(buyerData, { scaleFontColor:"black",scaleFontSize:20});
 }
+
+
    
 $(document).ready(createChart);
