@@ -22,23 +22,22 @@ var buyerData = {
 }
 
 
-
 var buyers = document.getElementById('buyers').getContext('2d');
 
-new Chart(buyers).Line(buyerData, { scaleFontColor:"black",scaleFontSize:20});
+new Chart(buyers).Line(buyerData, { scaleFontColor:"black",scaleFontSize:20, responsive: false, maintainAspectRatio: false });
 }
 
-    	$('#register-form-link').click(function(e) {
-		$("#register-form").delay(100).fadeIn(100);
- 		$("#login-form").fadeOut(100);
-		$('#login-form-link').removeClass('active');
+    	$('#overall-link').click(function(e) {
+		$("#overall-form").delay(100).fadeIn(100);
+ 		$("#recent-form").fadeOut(100);
+		$('#recent-link').removeClass('active');
 		$(this).addClass('active');
 		e.preventDefault();
 	});
-    $('#login-form-link').click(function(e) {
-		$("#login-form").delay(100).fadeIn(100);
- 		$("#register-form").fadeOut(100);
-		$('#register-form-link').removeClass('active');
+    $('#recent-link').click(function(e) {
+		$("#recent-form").delay(100).fadeIn(100);
+ 		$("#overall-form").fadeOut(100);
+		$('#overall-link').removeClass('active');
 		$(this).addClass('active');
 		e.preventDefault();
 	});
