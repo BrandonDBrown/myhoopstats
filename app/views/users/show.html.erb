@@ -1,53 +1,125 @@
 <% provide(:title, 'Dashboard') %> 
-
-<!--Gravatar code start-->
+<div class="background-pic2">
+</div>
+<!--Gravatar code end-->
+<div class="jumbotron dashjumbotron">
+      <div class="container">
+        <div class="row wraps">
+          <div class="col-md-3 col-xs-6">
+            <div class="row">
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+                        <div class="panel panel-login">
+					       <div class="panel-heading">
+                            <div class="col-xs-6">
+								<a href="#" class="active" id="register-form-link">Overall</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="#" id="login-form-link">Recent</a>
+							</div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                <div id="register-form">
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+<!--                        <div class="col-md-12 hder">Overall</div>-->
+                        <div class="col-md-1 col1"></div>
+                        <div class="col-md-3 col3">FTA</div>
+                        <div class="col-md-8 col8"><%= @user.practices.sum(:makeft) %>/<%= @user.practices.sum(:totalft) %></div>
+                    </div>
+                </div>
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+<!--                        <div class="col-md-12 hder">Overall</div>-->
+                        <div class="col-md-1 col1"></div>
+                        <div class="col-md-3 col3">FT%</div>
+                        <div class="col-md-8 col8"><%= @user.practices.average(:percentageft).round %>%</div>
+                    </div>
+                </div>
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+<!--                        <div class="col-md-12 hder">Overall</div>-->
+                        <div class="col-md-1 col1"></div>
+                        <div class="col-md-3 col3">FGA</div>
+                        <div class="col-md-8 col8"><%= @user.practices.sum(:makejs) %>/<%= @user.practices.sum(:totaljs) %></div>
+                    </div>
+                </div>
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+<!--                        <div class="col-md-12 hder">Overall</div>-->
+                        <div class="col-md-1 col1"></div>
+                        <div class="col-md-3 col3">FG%</div>
+                        <div class="col-md-8 col8"><%= @user.practices.average(:percentagejs).round %>%</div>
+                    </div>
+                </div>
+                    </div>
 <!--
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-        <% provide(:title, @user.name) %>
-            <h1>
-                <%= gravatar_for @user %>
-                <%= @user.name %>
-            </h1>
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+                        <div class="col-md-12 value"><%= @user.practices.average(:percentageft).round %>%</div>
+                        <div class="col-md-12">FT %</div>
+                    </div>
+                </div>
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+                        <div class="col-md-12 value"><%= @user.practices.sum(:makejs) %>/<%= @user.practices.sum(:totaljs) %></div>
+                        <div class="col-md-12">FGA</div>
+                    </div>
+                </div>
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+                        <div class="col-md-12 value"><%= @user.practices.average(:percentagejs).round %>%</div>
+                        <div class="col-md-12">FG %</div>
+                    </div>
+                </div>
+-->
+            </div>
         </div>
+        <div class="col-md-9 col-xs-12 graph1">
+            <div class="row">
+                <canvas id="buyers"></canvas>
+            </div>
+        </div>
+<!--
+        <div class="col-md-2 col-xs-6">
+            <div class="row">
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+                        <div class="col-md-12 hder">Last practice</div>
+                        <div class="col-md-12 value"><%= @user.practices.order("created_at ASC").last.makeft %>/<%= @user.practices.order("created_at ASC").last.totalft %></div>
+                        <div class="col-md-12">FTA</div>
+                    </div>
+                </div>
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+                        <div class="col-md-12 hder">Last practice</div>
+                        <div class="col-md-12 value"><%= @user.practices.order("created_at ASC").last.percentageft.round %>%</div>
+                        <div class="col-md-12">FT %</div>
+                    </div>
+                </div>
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+                        <div class="col-md-12 hder">Last practice</div>
+                        <div class="col-md-12 value"><%= @user.practices.order("created_at ASC").last.makejs %>/<%= @user.practices.order("created_at ASC").last.totaljs %></div>
+                        <div class="col-md-12">FGA</div>
+                    </div>
+                </div>
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+                        <div class="col-md-12 hder">Last practice</div>
+                        <div class="col-md-12 value"><%= @user.practices.order("created_at ASC").last.percentagejs.round %>%</div>
+                        <div class="col-md-12">FG %</div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+-->
     </div>
 </div>
--->
-<!--Gravatar code end-->
-      
-      <div class="jumbotron">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-xs-12 gridcase">
-                    <div class="col-md-6">
-                        <div class="thumbnail dashgrid">Jump Shot %
-                        <p id="stat1"></p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="thumbnail dashgrid">Free Throw %
-                        <p id="stat2"></p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="thumbnail dashgrid">Average Days / Week
-                        <p></p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="thumbnail dashgrid">Average Shots / Practice
-                        <p></p>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="col-md-6 col-xs-12 graph1">
-                    <canvas id="buyers" width="600" height="400"></canvas>
-                </div>
-          </div>
-            </div>
-      </div>
+</div>
+
 <!--START OF MICROPOST AREA-->
 <div class="container">
        <%= render 'shared/user_info' %>

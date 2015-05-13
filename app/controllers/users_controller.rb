@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
         @microposts = @user.microposts.paginate(page: params[:page])
+        
         if logged_in?
             @micropost = current_user.microposts.build
 #            @feed_items = current_user.feed.paginate(page: params[:page])
@@ -45,6 +46,7 @@ class UsersController < ApplicationController
     end
     
     def practice
+        @practice = current_user.practices.build if logged_in?
     end
     
     def destroy

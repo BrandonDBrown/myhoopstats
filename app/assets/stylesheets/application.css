@@ -18,6 +18,10 @@
     color:white;
 }
 
+.navbar-nav a {
+    color:white;
+}
+
 a:hover {
  text-decoration:none;   
 }
