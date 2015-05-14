@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  makeft: 1
+  totalft: 1
+  percentageft: 1
+  makejs: 1
+  totaljs: 1
+  percentagejs: 1
+  user_id: 
+
+two:
+  makeft: 1
+  totalft: 1
+  percentageft: 1
+  makejs: 1
+  totaljs: 1
+  percentagejs: 1
+  user_id: 

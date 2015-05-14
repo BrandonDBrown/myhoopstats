@@ -1,0 +1,29 @@
+<%= form_for(@practice) do |f| %>
+<div style="display:none;">
+<div>
+    <%= f.hidden_field :makeft %>
+</div>
+<div>
+    <%= f.hidden_field :totalft %>
+</div>
+<div>
+    <%= f.hidden_field :percentageft %>
+</div>
+<div>
+    <%= f.hidden_field :makejs %>
+</div>
+<div>
+    <%= f.hidden_field :totaljs %>
+</div>
+<div>
+    <%= f.hidden_field :percentagejs %>
+</div>
+</div>
+
+                <button id="button5" type="button" class="btn btnsave">
+<i id="icon3"></i><br>
+<%= f.submit "Save todays stats", class: "btn btnsave" %>
+</button>
+
+<% end %>
+
