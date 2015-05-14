@@ -1,6 +1,6 @@
 module ApplicationHelper
     def full_title(page_title = '')
-        base_title= "Shot Tracker App"
+        base_title= "MyHoopStats"
         if page_title.empty?
             base_title
             else
