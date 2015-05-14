@@ -25,7 +25,7 @@ var buyerData = {
 var buyers = document.getElementById('buyers').getContext('2d');
 
 new Chart(buyers).Line(buyerData, { scaleFontColor:"black",scaleFontSize:20, responsive: false, maintainAspectRatio: false });
-}
+
 
     	$('#overall-link').click(function(e) {
 		$("#overall-form").delay(100).fadeIn(100);
@@ -42,6 +42,6 @@ new Chart(buyers).Line(buyerData, { scaleFontColor:"black",scaleFontSize:20, res
 		e.preventDefault();
 	});
 
-
+}
    
 $(document).ready(createChart);
