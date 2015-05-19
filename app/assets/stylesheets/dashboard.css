@@ -1,5 +1,9 @@
-.wraps {
-/*    margin-top:-20px;*/
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
 }
 
 .wider {
@@ -19,58 +23,81 @@
     margin-bottom:5px;
     margin-top:0px;
     text-align:center;
+}
 /*
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     color:#1a1a1a;
 */
-}
 
-.col5 {
+.col5o {
     height: 14vh;
     font-size:4vh;
     color:#666;
-    vertical-align: middle;
     padding-top:4vh;
-    border-left: 12px solid #f05f40;
+    border-left: 12px solid #029f5b;
 }
+
+.col5r {
+    height: 14vh;
+    font-size:4vh;
+    color:#666;
+    padding-top:4vh;
+    border-left: 12px solid #59B2E6;
+}
+
 
 .col7 {
     font-size:5vh;
     padding-top: 3.5vh;
 }
+
+.lastly {
+    margin-bottom:0px;
+}
+
+.lastlymob {
+    margin-bottom:5px;
+}
+
+.pads {
+    margin-left: 5px;
+    padding-right: 0px;
+    padding-left:0px;
+    background-color:whitesmoke;
+    float:right;
+}
+
 .graph1 {
     text-align:center;
-    background-color:whitesmoke;
-    height:66.5vh;
-    width: 99%;
-    float: right;
+/*    float:left;*/
+    padding-right:3px;
+    padding-left:3px;
+}
 /*
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 */
-}
-
+    
 canvas {
-    background-color:whitesmoke;
     padding:20px;
+    padding-top:40px;
+    padding-bottom:20px;
     color:#1a1a1a;
     width:100%;
-    height:66.5vh;
-    float:right; 
+    height:60vh;
 }
 
 @media(max-width:768px) {
-    .graph1, canvas {
-        width: 100%;
-        height:100%;
+    canvas {
+        width: 90vw;
+        height:80vh;
+
+        
     }
 }
-
-
-
 
 .background-pic2 {
     background-image: url(courtb.jpg);
@@ -118,8 +145,13 @@ canvas {
 	-moz-transition: all 0.1s linear;
 	transition: all 0.1s linear;
 }
-.panel-tabs>.tabs-heading a.active{
-	color: #f05f40;
+.panel-tabs>.tabs-heading a.activeo{
+	color: #029f5b;
+	font-size: 18px;
+}
+
+.panel-tabs>.tabs-heading a.activer{
+	color: #59B2E6;
 	font-size: 18px;
 }
 

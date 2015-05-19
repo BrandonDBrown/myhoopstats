@@ -2,6 +2,7 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
+
           <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -22,17 +23,22 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+            
           <div class="navbar-brand"><img src="<%= image_path('logo.png') %>", style="max-width:50px"; /></div>
-            <div class="navbar-brand"><%= link_to "MyHoopStats", root_path %></div>
+            <% if logged_in? %>
+                <div class="navbar-brand"><%= link_to "MyHoopStats", current_user %></div>
+            <% else %>
+                <div class="navbar-brand"><%= link_to "MyHoopStats", root_path %></div>
+            <% end %>
+            
             
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <% if logged_in? %>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><%= current_user.name %></a></li>
-            <li><%= link_to "My Stats", current_user %></li>
-            <li><%= link_to "Track Practice", practice_path(current_user) %></li>
-            <li><%= link_to "Track Game", '#' %></li>
+            <li><%= link_to "Dashboard", current_user %></li>
+            <li><%= link_to "Practice", practice_path(current_user) %></li>
+            <li><%= link_to "Game", '#' %></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <span class="caret"></span>
@@ -47,17 +53,10 @@
           </ul>
             <% else %>
             
-          <div class="navbar-form navbar-right">
-              <%= form_for(:session, url: login_path) do |f| %>
-            <div class="form-group">
-                                        <%= f.email_field :email, class: 'form-control', placeholder:"Email" %>
-            </div>
-            <div class="form-group">
-<%= f.password_field :password, class: 'form-control', placeholder:"Password" %>
-            </div>
-            <%= f.submit "Log in", class: "form-control btn btn-success" %>
-              <% end %>
-          </div>
+          <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Sign up", signup_path %></li>
+              <li><%= link_to "Log in", login_path %></li>
+          </ul>
  <% end %>
         </div><!--/.navbar-collapse -->
       </div>
@@ -71,7 +70,7 @@
 <!--flash successful signup message end-->
 
 <%= yield %>
-
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <!--<%= debug(params) if Rails.env.development? %>-->
 </body>
