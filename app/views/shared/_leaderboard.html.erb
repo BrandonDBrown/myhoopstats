@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>FT Percentage Leaders</th>
+                <th>FT Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> <%= @practice.limit(1).order("percentagejs DESC").pluck(:percentagejs) %>%</td>
+            </tr>
+        </tbody>
+
+
+
+    </table>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>FT Percentage Leaders</th>
+                <th>FT Percentage</th>
+            </tr>
+        </thead>
+    </table>
+  </div>
+</div>

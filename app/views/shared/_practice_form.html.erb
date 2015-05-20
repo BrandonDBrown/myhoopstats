@@ -20,10 +20,9 @@
 </div>
 </div>
 
-                <button id="button5" type="button" class="btn btnsave">
-<i id="icon3"></i><br>
-<%= f.submit "Save todays stats", class: "btn btnsave" %>
-</button>
+<%= button_tag(:class => "btn btnsave", :id => "button5") do %>            
+<i id="icon3"></i><br>Save todays stats 
+<% end %>
 
 <% end %>
 

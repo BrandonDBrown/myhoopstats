@@ -2,7 +2,7 @@
 <div class="background-pic2">
 </div>
 
-<div class="jumbotron">
+<div class="jumbotron fitme">
       <div class="container">
         <div class="row row-eq-height" id="row-eq-height">
           <div class="col-md-3 col-sm-3 col-xs-12">
@@ -23,25 +23,25 @@
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid"> 
                         <div class="col-xs-5 col5o">FTA</div>
-                        <div class="col-xs-7 col7"><%= @user.practices.sum(:makeft) %>/<%= @user.practices.sum(:totalft) %></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0<% else %><%= @user.practices.sum(:makeft) %>/<%= @user.practices.sum(:totalft) %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
                         <div class="col-xs-5 col5o">FT%</div>
-                        <div class="col-xs-7 col7"><%= @user.practices.average(:percentageft).round %>%</div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0%<% else %><%= @user.practices.average(:percentageft).round %>%<% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
                         <div class="col-xs-5 col5o">FGA</div>
-                        <div class="col-xs-7 col7"><%= @user.practices.sum(:makejs) %>/<%= @user.practices.sum(:totaljs) %></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0<% else %><%=  @user.practices.sum(:makejs) %>/<%= @user.practices.sum(:totaljs) %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid lastly" id="lastrow">
                         <div class="col-xs-5 col5o">FG%</div>
-                        <div class="col-xs-7 col7"><%= @user.practices.average(:percentagejs).round %>%</div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0%<% else %><%= @user.practices.average(:percentagejs).round %>%<% end %></div>
                     </div>
                 </div>
             </div>
@@ -49,33 +49,40 @@
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
                         <div class="col-xs-5 col5r">FTA</div>
-                        <div class="col-xs-7 col7"><%= @user.practices.order("created_at ASC").last.makeft %>/<%= @user.practices.order("created_at ASC").last.totalft %></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0<% else %><%= @user.practices.order("created_at ASC").last.makeft %>/<%= @user.practices.order("created_at ASC").last.totalft %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
                         <div class="col-xs-5 col5r">FT%</div>
-                        <div class="col-xs-7 col7"><%= @user.practices.order("created_at ASC").last.percentageft.round %>%</div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0%<% else %><%= @user.practices.order("created_at ASC").last.percentageft.round %>%<% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
                         <div class="col-xs-5 col5r">FGA</div>
-                        <div class="col-xs-7 col7"><%= @user.practices.order("created_at ASC").last.makejs %>/<%= @user.practices.order("created_at ASC").last.totaljs %></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0<% else %><%= @user.practices.order("created_at ASC").last.makejs %>/<%= @user.practices.order("created_at ASC").last.totaljs %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid lastly" id="lastrow">
                         <div class="col-xs-5 col5r">FG%</div>
-                        <div class="col-xs-7 col7"><%= @user.practices.order("created_at ASC").last.percentagejs.round %>%</div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0%<% else %><%= @user.practices.order("created_at ASC").last.percentagejs.round %>%<% end %>
+                        </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
         <div class="col-md-9 col-sm-9 col-xs-12 pads" id="pads">
-                <div class="col-md-12 graph1">          
-                    <canvas id="buyers" width="100" height="100"></canvas>
+                <div class="col-md-12 graph1"> 
+                    
+                    <%= line_chart [ 
+    {name: "FT%", data: @user.practices.group(:created_at).average(:percentageft) }, {name: "FG%", data: @user.practices.group(:created_at).average(:percentagejs) } ], {id: "users-chart", height: "65vh" , id: "users-chart", library: {vAxis: {format: "#'%'", maxValue:"100"}, lineWidth: "3", colors: ['#029f5b', '#59B2E6'], backgroundColor: "whitesmoke", animation: {duration:"1000", startup:"true"}, chartArea: {left: "40", width:"83%",height:"80%"},fontName: "Helvetica Neue", title: "FT and FG Percentage", titleFontSize: "20", titleTextStyle: {color: "#333333"}
+      }}   %>
+                    
+                   
                 </div>
         </div>
     </div>

@@ -184,7 +184,7 @@
 
 .btn-prac .nopad, .toggler1 .nopad, .toggler2 .nopad {
     padding-top: 16px;
-	font-size: 40px;
+	font-size: 30px;
 }
 
 
@@ -232,5 +232,10 @@
     margin-bottom:11px;
 }
 
+.btnn, .toggler1, .toggler2, .btn-prac, .btnsave {
+    text-transform: uppercase;
+/*    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;*/
+    font-weight: 500;
+}
 
 
