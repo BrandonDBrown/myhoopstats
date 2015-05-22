@@ -6,7 +6,8 @@ gem 'rails', '4.2.1'
 
 #GEMS I ADDED 
 #    HELPS WITH ENCRYPTING USERNAME AND PASSWORED
-gem 'bcrypt', '3.1.7'
+#gem 'bcrypt', '3.1.7'
+gem 'bcrypt-ruby','~> 3.1.2'
 #    CREATES A BUNCH OF FAKE USERS
 gem 'faker',  '1.4.2'
 #    CREATES PAGINATION 
