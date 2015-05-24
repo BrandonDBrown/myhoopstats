@@ -79,7 +79,7 @@
                 <div class="col-md-12 graph1"> 
                     
                     <%= line_chart [ 
-    {name: "FT%", data: @user.practices.group(:created_at).average(:percentageft) }, {name: "FG%", data: @user.practices.group(:created_at).average(:percentagejs) } ], {id: "users-chart", height: "65vh" , id: "users-chart", library: {vAxis: {format: "#'%'", maxValue:"100"}, lineWidth: "3", colors: ['#029f5b', '#59B2E6'], backgroundColor: "whitesmoke", animation: {duration:"1000", startup:"true"}, chartArea: {left: "40", width:"83%",height:"80%"},fontName: "Helvetica Neue", title: "FT and FG Percentage", titleFontSize: "20", titleTextStyle: {color: "#333333"}
+    {name: "FT%", data: @user.practices.select("percentageft").group("created_at").having("percentageft > 0").sum("percentageft")}, {name: "FG%", data: @user.practices.select("percentagejs").group("created_at").having("percentagejs > 0").sum("percentagejs") } ], {id: "users-chart", height: "65vh" , id: "users-chart", library: {vAxis: {format: "#'%'", maxValue:"100"}, lineWidth: "3", colors: ['#029f5b', '#59B2E6'], backgroundColor: "whitesmoke", interpolateNulls: true, animation: {duration:"500", startup:"true"}, chartArea: {left: "40", width:"83%",height:"80%"},fontName: "Helvetica Neue", title: "FT and FG Percentage", titleFontSize: "20", titleTextStyle: {color: "#333333"}
       }}   %>
                     
                    

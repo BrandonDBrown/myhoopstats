@@ -25,13 +25,8 @@
           </button>
             
           <div class="navbar-brand"><img src="<%= image_path('logo.png') %>", style="max-width:50px"; /></div>
-            <% if logged_in? %>
-                <div class="navbar-brand"><%= link_to "MyHoopStats", current_user %></div>
-            <% else %>
-                <div class="navbar-brand"><%= link_to "MyHoopStats", root_path %></div>
-            <% end %>
             
-            
+                <div class="navbar-brand"><%= link_to "MyHoopStats", root_path %></div>   
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <% if logged_in? %>
@@ -62,16 +57,18 @@
       </div>
     </nav>
 <!--END OF CUSTOM NAV BAR    -->
-    
+
 <!--flash successful signup message start-->
 <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
+
 <!--flash successful signup message end-->
 
 <%= yield %>
     
 <!--START OF FOOTER    -->
+<!--
 <footer class="footer">
   <small>
     The <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
@@ -85,6 +82,7 @@
     </ul>
   </nav>
 </footer>
+-->
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <!--<%= debug(params) if Rails.env.development? %>-->
 </body>

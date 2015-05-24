@@ -6,8 +6,11 @@
             <div class="header-content-inner">
                 <h1>MyHoopStats</h1>
                 <hr>
-                <p>Shot Tracker is the best way to improve your jumpshot and free throw percentage.  Put in the hard work and track your progress, easily and effectively</p>
+                <p>MyHoopStats is the best way to track and improve your free throw and field goal percentage. By giving you a simple to use, voice activated web applications that tracks your progress overtime.</p>
+                <% if logged_in? %>
+                <% else %>
             <%= link_to "Sign up", signup_path, class: "btn btn-primary btn-xl page-scroll btns" %>
+                <% end %>
       
             </div>
         </div>
@@ -22,7 +25,7 @@
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
             </span>
-          <p>Use shot tracker to track your stats overtime, during games or practice. Set goals, track your progress and view your progress in a great user friendly interface.</p>
+          <p>Use MyHoopStats to track your stats overtime, during games or practice. Set goals, track your progress and view your progress in a great user friendly interface.</p>
         </div>
         <div class="col-md-4 hcol-md-4">
           <h2>Voice Activated</h2>
@@ -30,7 +33,7 @@
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
             </span>    
-          <p>Use shot tracker to track your makes and misses with a simple voice command.</p>
+          <p>Use shot tracker to track your makes and misses with simple voice commands.</p>
        </div>
         <div class="col-md-4 hcol-md-4">
           <h2>Web based Mobile App</h2>

@@ -136,7 +136,7 @@
 .toggler1.active1, .toggler2.active1 {
     color: #1a1a1a;
     padding: 2px;
-	border-top: 6px solid lightblue;
+	border-top: 6px solid #f05f40;
 /*	border-bottom: 6px solid #e92d00;*/
     border-left: 0;
     border-right: 0;
@@ -163,7 +163,7 @@
 	position: absolute;
 	border-style: solid;
 	border-width: 6px 6px 0;
-	border-color: lightblue transparent;
+	border-color: #f05f40 transparent;
 	display: block;
 	width: 0;
 	z-index: 1;

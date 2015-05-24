@@ -302,8 +302,7 @@ if(setme === "Free Throw") {
 //SAVE FUNCTION
     
     var save = function() {
-        if(setme === "Free Throw") {
-        
+        $("#button5").click();
 //        Reset
         dmakeft = 0;
         dtotalft = 0;
@@ -324,31 +323,6 @@ if(setme === "Free Throw") {
         document.getElementById("test3").innerHTML = '0';
         document.getElementById("test4").innerHTML = '0'; 
             
-            
-        } else {
-                
-//        Reset
-        dmakejs = 0;
-        dtotaljs = 0;
-        jsperc = 0;
-        jsperct = 0;
-        dmakeft = 0;
-        dtotalft = 0;
-        ftperct = 0;
-        ftperc = 0;
-
-            
-        setTimeout(function() {
-        o.set('square-check').size(30);
-        o.color('green');
-        }, 100);
-        
-        
-        document.getElementById("test1").innerHTML = '0';
-        document.getElementById("test2").innerHTML = '0';
-        document.getElementById("test3").innerHTML = '0';
-        document.getElementById("test4").innerHTML = '0';
-        }
     };    
     
     
