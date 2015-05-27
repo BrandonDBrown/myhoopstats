@@ -35,18 +35,27 @@
     height: 14vh;
     font-size:4vh;
     color:#666;
-    padding-top:4vh;
-    border-left: 12px solid #ee4b28;
+    padding-top:2vh;
+    border-left: 12px solid #59B2E6;
 }
+
+.col5o h4 {
+    padding-top:1vh;
+}
+
+
 
 .col5r {
     height: 14vh;
     font-size:4vh;
     color:#666;
-    padding-top:4vh;
-    border-left: 12px solid #cc432a;
+    padding-top:2vh;
+    border-left: 12px solid #029f5b;
 }
 
+.col5r h4 {
+    padding-top:1vh;
+}
 
 .col7 {
     font-size:5vh;
@@ -102,6 +111,12 @@
  
 }
 
+.fitme {
+ padding-top:30px; 
+ padding-bottom:0px;
+ margin-bottom:0px;
+}
+
 @media(max-width:768px) {
     .fitme {
         background-image:url(courtb.jpg);
@@ -134,16 +149,42 @@
 	transition: all 0.1s linear;
 }
 .panel-tabs>.tabs-heading a.activeo{
-	color: #ee4b28;
+	color: #59B2E6;
 	font-size: 18px;
 }
 
 .panel-tabs>.tabs-heading a.activer{
-	color: #cc432a;
+	color: #029f5b;
 	font-size: 18px;
 }
 
-#users-chart {
+#users-chart1 {
     padding-top:20px;
-
 }
+
+#users-chart2 {
+    padding-top:20px;
+}
+
+.input-field {
+    width: 70px;
+}
+
+.Fthrow {
+    z-index:10;
+    position:absolute;
+}
+
+
+.Fgoal {
+    z-index:9;
+    
+}
+
+@media(max-width:768px) {
+    .Fthrow {
+        position:relative;
+        margin-bottom:10px;
+    }
+}
+

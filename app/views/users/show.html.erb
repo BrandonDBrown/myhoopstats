@@ -5,84 +5,133 @@
 <div class="jumbotron fitme">
       <div class="container">
         <div class="row row-eq-height" id="row-eq-height">
-          <div class="col-md-3 col-sm-3 col-xs-12">
+          <div class="col-md-3 col-sm-12 col-xs-12">
             <div class="row">
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid panel-tabs">
 					   <div class="tabs-heading">
                             <div class="col-xs-6">
-								<a href="#" class="activeo" id="overall-link">Overall</a>
+								<a href="#" class="activeo" id="overall-link">Free throw</a>
 							</div>
 							<div class="col-xs-6">
-								<a href="#" id="recent-link">Recent</a>
+								<a href="#" id="recent-link">Field goal</a>
 							</div>
                         </div>
                     </div>
                 </div>
-            <div id="overall-form" style="display: block;">
+            <div class="overall-form" style="display: block;">
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid"> 
-                        <div class="col-xs-5 col5o">FTA</div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0<% else %><%= @user.practices.sum(:makeft) %>/<%= @user.practices.sum(:totalft) %><% end %></div>
+                        <div class="col-xs-5 col5o">FTA<h6>Overall</h6></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0<% else %><%=  @overallmakeft %>/<%= @overalltotalft %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5o">FT%</div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0%<% else %><%= @user.practices.average(:percentageft).round %>%<% end %></div>
+                        <div class="col-xs-5 col5o">FT%<h6>Overall</h6></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0%<% else %><%= @percentageft %>%<% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5o">FGA</div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0<% else %><%=  @user.practices.sum(:makejs) %>/<%= @user.practices.sum(:totaljs) %><% end %></div>
-                    </div>
-                </div>
-                <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid lastly" id="lastrow">
-                        <div class="col-xs-5 col5o">FG%</div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0%<% else %><%= @user.practices.average(:percentagejs).round %>%<% end %></div>
-                    </div>
-                </div>
-            </div>
-            <div id="recent-form" style="display: none;">
-                <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5r">FTA</div>
+                        <div class="col-xs-5 col5o">FTA<h6>Most recent</h6></div>
                         <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0<% else %><%= @user.practices.order("created_at ASC").last.makeft %>/<%= @user.practices.order("created_at ASC").last.totalft %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5r">FT%</div>
+                        <div class="col-xs-5 col5o">FT%<h6>Most recent</h6></div>
                         <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0%<% else %><%= @user.practices.order("created_at ASC").last.percentageft.round %>%<% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid lastly" id="lastrow">
+                        <div class="col-xs-5 col5o"><h4>FT% Goal</h4></div>
+                        <div class="col-xs-7 col7"><% if @user.ftgoal.blank? %>0%<% else %><%= best_in_place @user, :ftgoal, {:inner_class => "input-field", :type => :input} %>%<% end %></div>
+                    </div>
+                </div>
+            </div>
+            <div class="recent-form" style="display: none;">
+                <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5r">FGA</div>
+                        <div class="col-xs-5 col5r">FGA<h6>Overall</h6></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0<% else %><%=  @overallmakejs %>/<%= @overalltotaljs %><% end %></div>
+                    </div>
+                </div>
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+                        <div class="col-xs-5 col5r">FG%<h6>Overall</h6></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0%<% else %><%= @percentageft %>%<% end %></div>
+                    </div>
+                </div>
+                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid">
+                        <div class="col-xs-5 col5r">FGA<h6>Most recent</h6></div>
                         <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0<% else %><%= @user.practices.order("created_at ASC").last.makejs %>/<%= @user.practices.order("created_at ASC").last.totaljs %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid lastly" id="lastrow">
-                        <div class="col-xs-5 col5r">FG%</div>
+                    <div class="thumbnail dashgrid">
+                        <div class="col-xs-5 col5r">FG%<h6>Most recent</h6></div>
                         <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0%<% else %><%= @user.practices.order("created_at ASC").last.percentagejs.round %>%<% end %>
                         </div>
                     </div>
                 </div>
-                
+                                <div class="col-md-12 wider">
+                    <div class="thumbnail dashgrid lastly" id="lastrow">
+                                                <div class="col-xs-5 col5r"><h4>FG% Goal</h4></div>
+                        <div class="col-xs-7 col7"><% if @user.jsgoal.blank? %>0%<% else %><%= best_in_place @user, :jsgoal, {:inner_class => "input-field", :type => :input} %>%<% end %></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-        <div class="col-md-9 col-sm-9 col-xs-12 pads" id="pads">
-                <div class="col-md-12 graph1"> 
+        <div class="col-md-9 col-sm-12 col-xs-12 pads" id="pads">
+                <div class="col-md-12 graph1 Fthrow" id="user1-chart"> 
                     
-                    <%= line_chart [ 
-    {name: "FT%", data: @user.practices.select("percentageft").group("created_at").having("percentageft > 0").sum("percentageft")}, {name: "FG%", data: @user.practices.select("percentagejs").group("created_at").having("percentagejs > 0").sum("percentagejs") } ], {id: "users-chart", height: "65vh" , id: "users-chart", library: {vAxis: {format: "#'%'", maxValue:"100"}, lineWidth: "3", colors: ['#029f5b', '#59B2E6'], backgroundColor: "whitesmoke", interpolateNulls: true, animation: {duration:"500", startup:"true"}, chartArea: {left: "40", width:"83%",height:"80%"},fontName: "Helvetica Neue", title: "FT and FG Percentage", titleFontSize: "20", titleTextStyle: {color: "#333333"}
-      }}   %>
+    <%= line_chart [ 
+        {name: "Free Throw Percentage", data: @user.practices.select("percentageft").group("created_at").having("percentageft > 0").sum("percentageft")},         {name: "Field Goal Percentage", data: @user.practices.select("percentagejs").group("created_at").having("percentagejs > 0").sum("percentagejs") }
+    ], {id: "users-chart1", height: "80vh", 
+            library: {         
+                series: {
+          0 => {targetAxisIndex: 0, lineWidth: "3", pointSize:"6"},
+          1 => {targetAxisIndex: 1, lineWidth: "0", pointSize: "0" },
+        }, legend:{position:"none"},
+                vAxes:{ 0 => {format: "#'%'", viewWindow:{max:100}, gridlines: {count: 11}}, 1 => {gridlines: {color:"#ee4b28"},format: "#'%'", viewWindow:{max:100},ticks: [{v:@user.ftgoal,f:"FT Goal"}], textStyle: {fontSize: "14"}}}, 
+                colors: ['#59B2E6','#029f5b'], 
+                backgroundColor: "whitesmoke", 
+                interpolateNulls: true, 
+                animation: {duration:"500", startup:"true"},
+                chartArea: {left: "40", width:"83%",height:"75%"},
+                fontName: "Helvetica Neue", 
+                title: "Free Throw Percentage Over Time", 
+                titleFontSize: "20", 
+                titleTextStyle: {color: "#333333"}
+      }}  %>
+                      
+                </div>
+                            <div class="col-md-12 graph1 Fgoal" id="user2-chart"> 
                     
-                   
+    <%= line_chart [ 
+        {name: "Field Goal Percentage", data: @user.practices.select("percentageft").group("created_at").having("percentageft > 0").sum("percentageft")},         {name: "Field Goal Percentage", data: @user.practices.select("percentagejs").group("created_at").having("percentagejs > 0").sum("percentagejs") }
+    ], {id: "users-chart2", height: "80vh", 
+            library: {         
+                series: {
+          0 => {targetAxisIndex: 0, lineWidth: "0", pointSize:"0"},
+          1 => {targetAxisIndex: 1, lineWidth: "3", pointSize: "6" },
+        }, legend:{position:"none"},
+                vAxes:{ 0 => {format: "#'%'", viewWindow:{max:100}, gridlines: {count: 11}}, 1 => {gridlines: {color:"#ee4b28"},format: "#'%'", viewWindow:{max:100},ticks: [{v:@user.jsgoal,f:"FG Goal"}], textStyle: {fontSize: "14"}}},
+                colors: ['#59B2E6','#029f5b'], 
+                backgroundColor: "whitesmoke", 
+                interpolateNulls: true, 
+                animation: {duration:"500", startup:"true"},
+                chartArea: {left: "40", width:"83%",height:"75%"},
+                fontName: "Helvetica Neue", 
+                title: "Field Goal Percentage Over Time", 
+                titleFontSize: "20", 
+                titleTextStyle: {color: "#333333"}
+      }}  %>
+                      
                 </div>
         </div>
     </div>

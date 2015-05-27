@@ -2,6 +2,8 @@ class UsersController < ApplicationController
     before_action :logged_in_user, only: [:index, :practice, :edit, :update, :destroy]
     before_action :correct_user,   only: [:edit, :update, :practice]
     before_action :admin_user, only: :destroy
+    
+    
 
     def index
         @users = User.paginate(page: params[:page])
@@ -9,10 +11,17 @@ class UsersController < ApplicationController
     
     def show
         @user = User.find(params[:id])
+        @overallmakeft = @user.practices.sum(:makeft)
+        @overalltotalft = @user.practices.sum(:totalft)
+        @percentageft = ((@overallmakeft.round(5)/@overalltotalft.round(5))*100).round
+        @overallmakejs = @user.practices.sum(:makejs)
+        @overalltotaljs = @user.practices.sum(:totaljs)
+        @percentagejs = ((@overallmakejs.round(5)/@overalltotaljs.round(5))*100).round
         @microposts = @user.microposts.paginate(page: params[:page])
         
         if logged_in?
             @micropost = current_user.microposts.build
+            
 #            @feed_items = current_user.feed.paginate(page: params[:page])
         end
     end
@@ -32,16 +41,20 @@ class UsersController < ApplicationController
         end
     end
     
-    def edit  
+    def edit
+        
     end
     
     def update
-        
+        respond_to do |format|
         if @user.update_attributes(user_params)
             flash[:success] = "Profile updated"
+            format.json { respond_with_bip(@user) }
             redirect_to @user
         else
-            render 'edit'
+            render 'edit'  
+            format.json { respond_with_bip(@user) }
+        end
         end
     end
     
@@ -58,7 +71,7 @@ class UsersController < ApplicationController
     private
     
         def user_params
-            params.require(:user).permit(:name, :email, :password, :password_confirmation)
+            params.require(:user).permit(:name, :email, :password, :password_confirmation, :ftgoal, :jsgoal)
         end
        
     # Before filters

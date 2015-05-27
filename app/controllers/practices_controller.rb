@@ -1,5 +1,5 @@
 class PracticesController < ApplicationController
-    before_action :logged_in_user, only: [:create]
+    before_action :logged_in_user, only: [:create, :update, :edit]
 
     
     def create
@@ -13,6 +13,11 @@ class PracticesController < ApplicationController
         end
     end
     
+    def edit
+    end
+    
+    def update
+    end
     
     private
     

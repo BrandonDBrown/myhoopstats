@@ -121,6 +121,7 @@
     -webkit-transition: background-color 1s; 
     transition: background-color 1s;
 }
+*/
 
 .btn-nav:hover {
     color: white;
@@ -131,7 +132,6 @@
     -webkit-transition: background-color 1s;  For 
     transition: background-color 1s;
 }
-*/
 
 .toggler1.active1, .toggler2.active1 {
     color: #1a1a1a;
