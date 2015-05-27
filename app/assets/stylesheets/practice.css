@@ -129,7 +129,7 @@
     -webkit-transition: color 1s; 
     transition: color 1s;
     background-color:gray;
-    -webkit-transition: background-color 1s;  For 
+    -webkit-transition: background-color 1s; 
     transition: background-color 1s;
 }
 

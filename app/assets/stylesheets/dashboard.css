@@ -177,8 +177,7 @@
 
 
 .Fgoal {
-    z-index:9;
-    
+    z-index:9; 
 }
 
 @media(max-width:768px) {
