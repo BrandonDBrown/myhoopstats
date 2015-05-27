@@ -3,7 +3,6 @@ class UsersController < ApplicationController
     before_action :correct_user,   only: [:edit, :update, :practice]
     before_action :admin_user, only: :destroy
     
-    
 
     def index
         @users = User.paginate(page: params[:page])
@@ -13,10 +12,8 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @overallmakeft = @user.practices.sum(:makeft)
         @overalltotalft = @user.practices.sum(:totalft)
-        @percentageft = ((@overallmakeft.round(5)/@overalltotalft.round(5))*100).round
         @overallmakejs = @user.practices.sum(:makejs)
         @overalltotaljs = @user.practices.sum(:totaljs)
-        @percentagejs = ((@overallmakejs.round(5)/@overalltotaljs.round(5))*100).round
         @microposts = @user.microposts.paginate(page: params[:page])
         
         if logged_in?
@@ -49,10 +46,10 @@ class UsersController < ApplicationController
         respond_to do |format|
         if @user.update_attributes(user_params)
             flash[:success] = "Profile updated"
+            format.html { redirect_to @user }
             format.json { respond_with_bip(@user) }
-            redirect_to @user
-        else
-            render 'edit'  
+        else 
+            format.html { render action: 'edit' }
             format.json { respond_with_bip(@user) }
         end
         end

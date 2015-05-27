@@ -10,17 +10,17 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     test "invalid signup information" do
         get signup_path
         assert_no_difference 'User.count' do
-            post users_path, user: {name: "", email: "user@invalid", password: "foo", password_confirmation: "bar" }
+            post users_path, user: {name: "", email: "user@invalid", password: "foo", password_confirmation: "bar", ftgoal: 101, jsgoal: 101 }
         end
         assert_template 'users/new'
         assert_select 'div#error_explanation'
         assert_select 'div.field_with_errors'
     end
     
-        test "valid signup information with account activation" do
+    test "valid signup information with account activation" do
         get signup_path
         assert_difference 'User.count', 1 do
-            post users_path, user: {name: "Example User", email: "user@example.com", password: "password", password_confirmation: "password" }
+            post users_path, user: {name: "Example User", email: "user@example.com", password: "password", password_confirmation: "password", ftgoal:0, jsgoal:0 }
         end
     assert_equal 1, ActionMailer::Base.deliveries.size
     user = assigns(:user)
