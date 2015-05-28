@@ -90,7 +90,7 @@
                 <div class="col-md-12 graph1 Fthrow" id="user1-chart"> 
                     
     <%= line_chart [ 
-        {name: "Free Throw Percentage", data: @user.practices.select("percentageft").group("created_at").having("percentageft > 0").sum("percentageft")},         {name: "Field Goal Percentage", data: @user.practices.select("percentagejs").group("created_at").having("percentagejs > 0").sum("percentagejs") }
+        {name: "Free Throw Percentage", data: @user.practices.select("created_at, sum(percentageft) as sum_percentageft").group("created_at").having("percentageft > 0").sum("percentageft")},         {name: "Field Goal Percentage", data: @user.practices.select("created_at, sum(percentagejs) as sum_percentagejs").group("created_at").having("percentagejs > 0").sum("percentagejs") }
     ], {id: "users-chart1", height: "80vh", 
             library: {         
                 series: {
@@ -113,7 +113,7 @@
                             <div class="col-md-12 graph1 Fgoal" id="user2-chart"> 
                     
     <%= line_chart [ 
-        {name: "Field Goal Percentage", data: @user.practices.select("percentageft").group("created_at").having("percentageft > 0").sum("percentageft")},         {name: "Field Goal Percentage", data: @user.practices.select("percentagejs").group("created_at").having("percentagejs > 0").sum("percentagejs") }
+        {name: "Field Goal Percentage", data: @user.practices.select("created_at, sum(percentageft) as sum_percentageft").group("created_at").having("percentageft > 0").sum("percentageft")},         {name: "Field Goal Percentage", data: @user.practices.select("created_at, sum(percentagejs) as sum_percentagejs").group("created_at").having("percentagejs > 0").sum("percentagejs") }
     ], {id: "users-chart2", height: "80vh", 
             library: {         
                 series: {
