@@ -29,7 +29,7 @@
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
                         <div class="col-xs-5 col5o">FT%<h6>Overall</h6></div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0%<% else %><%= ((@overallmakeft.to_f/@overalltotalft.to_f)*100).to_i %>%<% end %></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0%<% else %><%= ((@overallmakeft/@overalltotalft)*100).round %>%<% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
@@ -61,7 +61,7 @@
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
                         <div class="col-xs-5 col5r">FG%<h6>Overall</h6></div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0%<% else %><%= ((@overallmakejs.to_f/@overalltotaljs.to_f)*100).to_i %>%<% end %></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0%<% else %><%= ((@overallmakejs.to_f/@overalltotaljs.to_f)*100).round %>%<% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
