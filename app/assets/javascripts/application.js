@@ -16,5 +16,6 @@
 //= require best_in_place
 //= require chartkick
 //= require bootstrap
+//= require howler
 //= require turbolinks
 //= require_tree .

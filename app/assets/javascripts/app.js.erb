@@ -2,6 +2,8 @@
         $('#row-eq-height').removeClass('row-eq-height');
         $('#lastrow').removeClass('lastly');
         $('#lastrow').addClass('lastlymob');
+        $('#lastrow2').removeClass('lastly');
+        $('#lastrow2').addClass('lastlymob');
     }
     else {}
 
@@ -30,19 +32,28 @@
 
  $('.dropdown-toggle').dropdown();
 
-        //var counter = $('#TextBox').val();
-        $('#AddButton').click( function() {
-            var counter = $('#TextBox').val();
-            counter++ ;
-            $('#TextBox').val(counter);
-    });
-        $('#SubtractButton').click( function() {
-            var counter = $('#TextBox').val();
-            counter-- ;
-            $('#TextBox').val(counter);
-    });
 
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
+
+//google font for logo
+
+  WebFontConfig = {
+    google: { families: [ 'Rock+Salt::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+
+var sound = new Howl({
+  urls: ['swish.mp3','swish.aif'],
+    loop:true
+}).play();
    
 $(document).ready();

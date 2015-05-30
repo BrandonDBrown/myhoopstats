@@ -29,6 +29,7 @@ document.getElementById("practice_totaljs").value = 0;
 document.getElementById("practice_percentagejs").value = 0;
 
 
+
         // define the functions our commands will run.
 //    You have to call either Free Throw or Jump Shot first of Table Breaks
 //    SET FREE THROW
@@ -51,7 +52,6 @@ document.getElementById("practice_percentagejs").value = 0;
 //MAKE FUNCTION
     Hammer(button3).on("tap", function() {
         if(setme === "Free Throw") {
-            
         dmakeft = dmakeft + 1;
         dtotalft = dtotalft + 1;
         var ftperc = (dmakeft / dtotalft) * 100;
