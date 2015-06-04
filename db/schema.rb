@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526191045) do
+ActiveRecord::Schema.define(version: 20150604041337) do
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20150526191045) do
     t.string   "remember_digest"
     t.boolean  "admin",             default: false
     t.string   "activation_digest"
-    t.boolean  "activated",         default: false
+    t.boolean  "activated",         default: true
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"

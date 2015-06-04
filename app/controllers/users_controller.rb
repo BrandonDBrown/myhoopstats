@@ -14,13 +14,7 @@ class UsersController < ApplicationController
         @overalltotalft = @user.practices.sum(:totalft)
         @overallmakejs = @user.practices.sum(:makejs)
         @overalltotaljs = @user.practices.sum(:totaljs)
-        @microposts = @user.microposts.paginate(page: params[:page])
         
-        if logged_in?
-            @micropost = current_user.microposts.build
-            
-#            @feed_items = current_user.feed.paginate(page: params[:page])
-        end
     end
     
     def new
@@ -28,11 +22,12 @@ class UsersController < ApplicationController
     end
     
     def create
+#        user = User.find_by(email: params[:email])
         @user = User.new(user_params)
         if @user.save
-           @user.send_activation_email
-           flash[:info] = "Please check your email to activate your account."
-           redirect_to root_url
+           log_in @user
+           flash[:success] = "Account activated."
+           redirect_to @user
         else
             render 'new'
         end
