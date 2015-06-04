@@ -4,45 +4,50 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>MyHoopStats</h1>
-                <hr>
+                        <h1>MyHoopStats</h1>
+                        <hr>
                 <p>Tracking your hard work is a scientifically proven and highly effective way to improve your shooting percentage. MyHoopStats is the best way to track and improve your free throw and field goal percentage. MyHoopStats is a voice activated web application that will track your stats whether at the gym or at the park.</p>
-                <% if logged_in? %>
-                <% else %>
+            <% if logged_in? %>
+              <% else %>
             <%= link_to "Sign up", signup_path, class: "btn btn-primary btn-xl page-scroll btns" %>
                 <% end %>
-      
             </div>
         </div>
     </header>
-<div class="fullheight">
+
     <div class="container ycontainer">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4 hcol-md-4">
+          <div class="col-md-6">
+        <div class="col-lg-12 col-md-12 col-sm-12 hcol-md-4">
           <h2>Track Stats</h2>
-            <span class="fa-stack fa-4x">
+            <span class="fa-stack fa-3x">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
             </span>
-          <p>Use MyHoopStats to track your free throw and field goal percentage as well as set goals and view your progress over time in a great user friendly interface.</p>
+          <p>Use MyHoopStats to track your free throw and field goal percentage overtime and set goals to improve your performance.</p>
+                        
         </div>
-        <div class="col-md-4 hcol-md-4">
+        <div class="col-lg-12 col-md-12 hcol-md-4">
           <h2>Voice Activated</h2>
-            <span class="fa-stack fa-4x">
+            <span class="fa-stack fa-3x">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
             </span>    
-          <p>For Android users, use simple voice commands to track your makes and misses when shooting alone or have a friend log them for you.</p>
+          <p>For Android users, use simple voice commands to track your progress.</p>
        </div>
-        <div class="col-md-4 hcol-md-4">
-          <h2>Web based Mobile App</h2>
-            <span class="fa-stack fa-4x">
+        <div class="col-lg-12 col-md-12 hcol-md-4">
+          <h2>Web App</h2>
+            <span class="fa-stack fa-3x">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-mobile fa-stack-1x fa-inverse fa-1x"></i>
             </span>
-          <p>MyHoopStats is a web based application that has a repsonsive mobile site. Simply access MyHoopStats on your phones web browser and track whether you are at the gym or the park.</p>
+          <p>Simply access MyHoopStats on your phones web browser and track whether you are at the gym or the park.</p>
         </div>
+              </div>
+          <div class="col-md-6 col-sm-12 hvideo">
+          <%= video_tag(["features.mov","features.m4v"], controls: true, size: "350x510") %>
+              </div>
       </div>
 </div> <!-- /container -->
       
@@ -60,4 +65,17 @@
         </div>
       </div>
 </div> <!-- /container --> 
-</div>
+    <div class="container">
+<footer class="footer">
+  <small>
+    <%= link_to "MyHoopStats", root_url %>
+  </small>
+  <nav>
+    <ul>
+      <li><%= link_to "Terms of Service",  terms_path %></li>
+      <li><%= link_to "Cookie Policy",   cookie_path %></li>
+      <li><%= link_to "Privacy Policy", privacy_path %></li>
+    </ul>
+  </nav>
+</footer>
+    </div>

@@ -34,33 +34,41 @@
 .col5o {
     height: 14vh;
     font-size:4vh;
-    color:#666;
-    padding-top:2vh;
+    padding-top:2.8vh;
+    padding-right:0;
+    padding-left: 8%;
     border-left: 12px solid #59B2E6;
+    text-align:left;
 }
 
-.col5o h4 {
-    padding-top:1vh;
+.col5o h6, .col5r h6 {
+    color:#666;
+    margin-top:5%;
 }
 
-
+.col6fg {
+    cursor:pointer;
+}
 
 .col5r {
     height: 14vh;
     font-size:4vh;
-    color:#666;
-    padding-top:2vh;
+    padding-top:2.8vh;
+    padding-right:0;
+    padding-left: 8%;
     border-left: 12px solid #029f5b;
+    text-align:left;
 }
 
-.col5r h4 {
-    padding-top:1vh;
+.col5r h2, .col5o h2 {
+   margin-top:1%;
 }
 
 .col7 {
     font-size:5vh;
     padding-top: 3.5vh;
 }
+
 
 .lastly {
     margin-bottom:0px;
@@ -139,12 +147,14 @@
     height:3em;
 }
 
+
 .panel-tabs .tabs-heading {
     padding-top:10px;
     padding-bottom:10px;
 }
 
-.panel-tabs>.tabs-heading a{
+.col6fg {
+
 	text-decoration: none;
 	color: #666;
 	font-weight: bold;
@@ -153,12 +163,14 @@
 	-moz-transition: all 0.1s linear;
 	transition: all 0.1s linear;
 }
-.panel-tabs>.tabs-heading a.activeo{
+
+.activeo {
 	color: #59B2E6;
 	font-size: 18px;
+
 }
 
-.panel-tabs>.tabs-heading a.activer{
+.activer {
 	color: #029f5b;
 	font-size: 18px;
 }

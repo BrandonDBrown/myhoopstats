@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
 
   root 'pages#home'
-  get 'about' => 'pages#about'
-  get 'contact' => 'pages#contact'
+  get 'howto' => 'pages#howto'
+  get 'cookie' => 'pages#cookie'
+  get 'terms' => 'pages#terms'
+  get 'privacy' => 'pages#privacy'
   get 'signup' => 'users#new'
   get '/users/:id/practice' => 'users#practice', as: :practice
   get 'login' => 'sessions#new'

@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     def update
         respond_to do |format|
         if @user.update_attributes(user_params)
-            flash[:success] = "Profile updated"
+#            flash[:success] = "Successfully updated"
             format.html { redirect_to @user }
             format.json { respond_with_bip(@user) }
         else 

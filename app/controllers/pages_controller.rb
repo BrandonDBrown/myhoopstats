@@ -5,9 +5,15 @@ class PagesController < ApplicationController
     end
   end
     
-  def about
+  def terms
   end
     
-  def contact
+  def cookie
+  end
+    
+  def privacy
+  end
+  
+  def howto
   end
 end

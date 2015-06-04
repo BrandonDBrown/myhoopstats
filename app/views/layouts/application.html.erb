@@ -33,14 +33,17 @@
             <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Dashboard", current_user %></li>
             <li><%= link_to "Practice", practice_path(current_user) %></li>
-            <li><%= link_to "Game", '#' %></li>
+<!--            <li><%= link_to "Game", '#' %></li>-->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
+               <% if current_user.admin %>
                 <li><%= link_to "All users", users_path %></li>
+                <% else %><% end %>
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li><%= link_to "How To", howto_path %></li>
                 <li class="divider"></li>
                 <li><%= link_to "Log out", logout_path, method: "delete" %></li>
                                 </ul>
@@ -49,7 +52,9 @@
             <% else %>
             
           <ul class="nav navbar-nav navbar-right">
+
               <li><%= link_to "Sign up", signup_path %></li>
+              
               <li><%= link_to "Log in", login_path %></li>
           </ul>
  <% end %>
@@ -68,21 +73,7 @@
 <%= yield %>
     
 <!--START OF FOOTER    -->
-<!--
-<footer class="footer">
-  <small>
-    The <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-    by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "About",   '#' %></li>
-      <li><%= link_to "Contact", '#' %></li>
-      <li><a href="http://news.railstutorial.org/">News</a></li>
-    </ul>
-  </nav>
-</footer>
--->
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <!--<%= debug(params) if Rails.env.development? %>-->
 </body>

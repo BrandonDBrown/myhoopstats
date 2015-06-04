@@ -7,17 +7,15 @@
         <div class="row row-eq-height" id="row-eq-height">
           <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
             <div class="row">
-                <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid panel-tabs">
 					   <div class="tabs-heading">
-                            <div class="col-xs-6">
-								<a href="#" class="activeo" id="overall-link">Free throw</a>
+                            <div class="col-xs-6 col6fg activeo" id="overall-link">
+								Free throw
 							</div>
-							<div class="col-xs-6">
-								<a href="#" id="recent-link">Field goal</a>
+							<div class="col-xs-6 col6fg" id="recent-link">
+								Field goal
 							</div>
                         </div>
-                    </div>
                 </div>
             <div class="overall-form" style="display: block;">
                 <div class="col-md-12 wider">
@@ -34,19 +32,19 @@
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5o">FTA<h6>Most recent</h6></div>
+                        <div class="col-xs-5 col5o">FTA<h6><% if @user.practices.pluck(:totalft).blank? %>No data<% else %><%= @user.practices.select("makeft, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y") %><% end %></h6></div>
                         <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0<% else %><%= @user.practices.order("created_at ASC").last.makeft %>/<%= @user.practices.order("created_at ASC").last.totalft %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5o">FT%<h6>Most recent</h6></div>
+                        <div class="col-xs-5 col5o">FT%<h6><% if @user.practices.pluck(:totalft).blank? %>No data<% else %><%= @user.practices.select("percentageft, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y") %><% end %></h6></div>
                         <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0%<% else %><%= @user.practices.order("created_at ASC").last.percentageft.round %>%<% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid lastly" id="lastrow">
-                        <div class="col-xs-5 col5o"><h4>FT% Goal</h4></div>
+                        <div class="col-xs-5 col5o">Goal<h6>Click to set</h6></div>
                         <div class="col-xs-7 col7"><% if @user.ftgoal.blank? %>0%<% else %><%= best_in_place @user, :ftgoal, {:inner_class => "input-field", :type => :input} %>%<% end %></div>
                     </div>
                 </div>
@@ -61,25 +59,25 @@
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
                         <div class="col-xs-5 col5r">FG%<h6>Overall</h6></div>
-                        <div class="col-xs-7 col7"><% if @overallmakeft == 0 %>0%<% else %><%= ((@overallmakejs.to_f/@overalltotaljs.to_f)*100).round %>%<% end %></div>
+                        <div class="col-xs-7 col7"><% if @overallmakejs == 0 %>0%<% else %><%= ((@overallmakejs.to_f/@overalltotaljs.to_f)*100).round %>%<% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5r">FGA<h6>Most recent</h6></div>
+                        <div class="col-xs-5 col5r">FGA<h6><% if @user.practices.pluck(:totaljs).blank? %>No Data<% else %><%= @user.practices.select("makejs, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y") %><% end %></h6></div>
                         <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0<% else %><%= @user.practices.order("created_at ASC").last.makejs %>/<%= @user.practices.order("created_at ASC").last.totaljs %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5r">FG%<h6>Most recent</h6></div>
+                        <div class="col-xs-5 col5r">FG%<h6><% if @user.practices.pluck(:totaljs).blank? %>No data<% else %><%= @user.practices.select("percentagejs, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y") %><% end %></h6></div>
                         <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0%<% else %><%= @user.practices.order("created_at ASC").last.percentagejs.round %>%<% end %>
                         </div>
                     </div>
                 </div>
                                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid lastly" id="lastrow2">
-                                                <div class="col-xs-5 col5r"><h4>FG% Goal</h4></div>
+                                                <div class="col-xs-5 col5r">Goal<h6>Click to set</h6></div>
                         <div class="col-xs-7 col7"><% if @user.jsgoal.blank? %>0%<% else %><%= best_in_place @user, :jsgoal, {:inner_class => "input-field", :type => :input} %>%<% end %></div>
                     </div>
                 </div>

@@ -26,7 +26,7 @@
         $("#user2-chart").removeClass('Fgoal');
         $("#user2-chart").addClass('Fthrow');
 		$('#overall-link').removeClass('activeo');
-		$(this).addClass('activer');
+		$('#recent-link').addClass('activer');
 		e.preventDefault();
 	});
 
@@ -51,9 +51,5 @@
     s.parentNode.insertBefore(wf, s);
   })();
 
-var sound = new Howl({
-  urls: ['swish.mp3','swish.aif'],
-    loop:true
-}).play();
    
 $(document).ready();

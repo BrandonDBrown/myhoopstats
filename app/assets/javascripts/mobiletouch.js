@@ -52,6 +52,7 @@ document.getElementById("practice_percentagejs").value = 0;
 //MAKE FUNCTION
     Hammer(button3).on("tap", function() {
         if(setme === "Free Throw") {
+
         dmakeft = dmakeft + 1;
         dtotalft = dtotalft + 1;
         var ftperc = (dmakeft / dtotalft) * 100;
@@ -73,7 +74,10 @@ document.getElementById("practice_percentagejs").value = 0;
         m.set('circle-o');
         }, 250);
         m.set('circle-o-filled').size(30);
-            
+        
+//        BUTTON SOUND
+        $(".audio-play")[0].currentTime = 0;
+        return $(".audio-play")[0].play();
         } else {
             
         dmakejs = dmakejs + 1;
@@ -94,6 +98,10 @@ document.getElementById("practice_percentagejs").value = 0;
         }, 250);
         m.set('circle-o-filled').size(30);
         }
+        
+//        BUTTON SOUND
+        $(".audio-play")[0].currentTime = 0;
+        return $(".audio-play")[0].play();
     });
 
 //MISS FUNCTION  
@@ -160,7 +168,10 @@ document.getElementById("practice_percentagejs").value = 0;
         document.getElementById("test2").innerHTML = '0';
         document.getElementById("test3").innerHTML = '0';
         document.getElementById("test4").innerHTML = '0'; 
-            
+        
+//        BUTTON SOUND
+        $(".save-play")[0].currentTime = 0;
+        return $(".save-play")[0].play();
             
         } else {
                 
@@ -185,6 +196,10 @@ document.getElementById("practice_percentagejs").value = 0;
         document.getElementById("test2").innerHTML = '0';
         document.getElementById("test3").innerHTML = '0';
         document.getElementById("test4").innerHTML = '0';
+            
+        //        BUTTON SOUND
+        $(".save-play")[0].currentTime = 0;
+        return $(".save-play")[0].play();
         }
     }); 
 
@@ -235,7 +250,11 @@ if(setme === "Free Throw") {
         m.set('circle-o');
         }, 250);
         m.set('circle-o-filled').size(30);
-            
+        
+        //        BUTTON SOUND
+        $(".audio-play")[0].currentTime = 0;
+        return $(".audio-play")[0].play();
+    
         } else {
             
         dmakejs = dmakejs + 1;
@@ -255,6 +274,10 @@ if(setme === "Free Throw") {
         m.set('circle-o');
         }, 250);
         m.set('circle-o-filled').size(30);
+            
+        //        BUTTON SOUND
+        $(".audio-play")[0].currentTime = 0;
+        return $(".audio-play")[0].play();
         }
     };
     
@@ -322,7 +345,10 @@ if(setme === "Free Throw") {
         document.getElementById("test2").innerHTML = '0';
         document.getElementById("test3").innerHTML = '0';
         document.getElementById("test4").innerHTML = '0'; 
-            
+        
+        //        BUTTON SOUND
+        $(".save-play")[0].currentTime = 0;
+        return $(".save-play")[0].play();
     };    
     
     

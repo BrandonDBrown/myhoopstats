@@ -1,0 +1,81 @@
+<% provide(:title, 'How To') %>
+<div class="background-pic7">
+</div>    
+<!-- Main jumbotron -->
+<div class="container fitme">
+<!--
+    <div class="row head">
+        <div class="col-md-12">
+            <h1>How To</h1>
+            <hr>
+        </div>
+    </div>
+-->
+    <div class="row howto">
+        <div class="col-lg-6 col-md-6 col-sm-12 tabz">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Basics
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <ul>
+            <li>Choose Free Throw or Jump Shot</li>
+            <li>Use Touch or Voice commands to log shots</li>
+            <li>Save data</li>
+            <li>Head to the Dashboard to see your progress</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Voice Commands
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        If you have an Android phone, allow MyHoopStats to access your microphone and use voice commands to track your progress. <br><br>All voice commands are located on the buttons: <br>
+        <ul>
+            <li>Say "free throw" or "jump shot" to choose what to track</li>
+            <li>Say "make" or "miss" to log shots</li>
+            <li>Say "save" to save your results</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Acronyms
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        <ul>
+            <li>FGA - Field Goal Attempts</li>
+            <li>FG% - Field Goal Percentage</li>
+            <li>FTA - Free Throw Attempts</li>
+            <li>FT% - Free Throw Percentage</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+        <div class="col-md-6 col-sm-12 video">
+<%= video_tag(["Practice.mov","Practice.m4v"], controls: true, size: "350x450") %>
+            </div>
+
+                    </div>
+        </div> 

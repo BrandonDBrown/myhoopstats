@@ -5,7 +5,6 @@ class PracticesController < ApplicationController
     def create
         @practice = current_user.practices.build(practice_params) 
         if @practice.save
-            flash[:success] = "Stats successfully saved"
             redirect_to(:back) 
         else
             flash[:danger] = "Make/Miss cannot be 0"
