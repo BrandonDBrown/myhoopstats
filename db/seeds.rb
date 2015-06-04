@@ -14,10 +14,5 @@ User.create!(name: "brandong brown", email: "brandon.bbrandon@gmail.com", passwo
     User.create!(name: name, email: email, password: password, password_confirmation: password, ftgoal: 0, jsgoal: 0, activated: true, activated_at: Time.zone.now)
 end
     
-users = User.order(:created_at).take(6)
-50.times do
-        content = Faker::Lorem.sentence(5)
-        users.each { |user| user.microposts.create!(content: content) }
-end
 
 Practice.create!(makeft: 0, totalft: 0, percentageft: 0, makejs: 0, totaljs: 0, percentagejs: 0, user_id: 1)
