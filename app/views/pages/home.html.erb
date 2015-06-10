@@ -4,9 +4,10 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                        <h1>MyHoopStats</h1>
-                        <hr>
-                <p>Tracking your hard work is a scientifically proven and highly effective way to improve your shooting percentage. MyHoopStats is the best way to track and improve your free throw and field goal percentage. MyHoopStats is a voice activated web application that will track your stats whether at the gym or at the park.</p>
+            <div id="hlname">MyHoopStats</div>
+                        
+                <%= image_tag("logo1.png", id:"hlogo") %>
+                <p>The greatest shooters are great because they shoot a lot of shots. Ray Allen shoots around 300 shots before every game. Science has proven that the best way to improve is to set goals and track your progress. MyHoopStats aims to provide you with the means to track your stats using voice commands, set goals and see your progress over time</p>
             <% if logged_in? %>
               <% else %>
             <%= link_to "Sign up", signup_path, class: "btn btn-primary btn-xl page-scroll btns" %>
@@ -32,7 +33,7 @@
           <h2>Voice Activated</h2>
             <span class="fa-stack fa-3x">
                 <i class="fa fa-square fa-stack-2x"></i>
-                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                <i class="fa fa-microphone fa-stack-1x fa-inverse"></i>
             </span>    
           <p>For Android users, use simple voice commands to track your progress.</p>
        </div>
@@ -46,7 +47,7 @@
         </div>
               </div>
           <div class="col-md-6 col-sm-12 hvideo">
-          <%= video_tag(["features.mov","features.m4v"], controls: true, size: "350x510") %>
+          <%= video_tag(["features.mov","features.mp4"], controls: true, size: "350x510", class: "videoz") %>
               </div>
       </div>
 </div> <!-- /container -->
@@ -60,7 +61,7 @@
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
             </span><br>
-          <a href="shotracker@gmail.com">myhoopstats@gmail.com</a>
+          <a href="myhoopstats@gmail.com">myhoopstats@gmail.com</a>
 
         </div>
       </div>

@@ -10,9 +10,8 @@ body {
 .navbar {
     position:relative;
     margin:0;
-    padding-top:10px;
+    padding-top:15px;
     padding-bottom:10px;
-    
 }
 
 hr {
@@ -46,9 +45,23 @@ hr {
 
 @media(max-width:480px) {
     .background-pic {
-        height:135%;
+        height:200%;
         min-height:100%;
     }
+}
+
+#hlogo {
+    width:200px;
+}
+
+#hlname {
+    position:absolute;
+    font-size:40px;
+    font-family: 'bodoqueregular', 'Helvetica Neue',Arial;
+    right:0;
+    left:0;
+    top:24vh;
+    text-shadow: .5px .5px white;
 }
 
 header {
@@ -61,7 +74,7 @@ header {
 header .header-content {
     position: relative;
     width: 100%;
-    padding: 8vh 15px 12vh 15px;
+    padding: 6vh 15px 12vh 15px;
     text-align: center;
 }
 
@@ -78,20 +91,22 @@ header .header-content .header-content-inner hr {
 }
 
 header .header-content .header-content-inner p {
+    margin-top:30px;
     margin-bottom:15px;
-    font-size: 4vh;
+    font-size: 22px;
     font-weight: 300;
     text-shadow: 1px 1px #1a1a1a;
 }
 
-@media(min-width:768px) {
+@media(min-width:992px) {
     header {
         min-height: 90%;
+
     }
 
     header .header-content {
         position: absolute;
-        top: 43%;
+        top: 37%;
         padding: 0 50px;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
@@ -116,35 +131,71 @@ header .header-content .header-content-inner p {
         max-width: 80%;
         font-size: 20px;
         margin-bottom: 50px;
-        text-shadow: 0px 0px #1a1a1a;
+        text-shadow: 1px 1px #1a1a1a;
        
     }
         header .header-content .header-content-inner h1 {
         font-size: 80px;
     }
+    #hlname {
+    position:absolute;
+    font-size:50px;
+    font-family: 'bodoqueregular', 'Helvetica Neue',Arial;
+    right:0;
+    left:0;
+    top:8vh;
+}
     
 }
+@media(max-width:470px) {
+    #hlogo {
+    width:100px;
+}
 
+#hlname {
+    display:none;
+}
+}
+
+//navbar
 .navbar-inverse .navbar-nav>li>a {
-  color: white;
+  color: lightgrey;
   font-size: 16px;
 }
 
-.navbar-brand {
-    font-size:20px;
-    font-family: 'Rock Salt', 'Helvetica Neue',Arial;
+.navbar-inverse .navbar-header .navbar-brand {
+    margin-top:5px;
 }
 
-.navbar-brand img {
-    margin-top:-15px;
-    padding:0;
+.brandname img {
+    max-width:300px;
+    margin-top:-12px;
+}
+.brandlogo img {
+    margin-top:-18px;
+//    padding:0;
 }
 
 @media(max-width:480px) {
-    .navbar-brand {
-        margin-left:.5vw;
-        font-size:17px;
+    .brandlogo img {
+        margin-top:-19px;
+
 }
+
+}
+
+@media(max-width:470px) {
+    .brandlogo img {
+        display:none;
+        position:absolute;
+        
+}  
+    .brandname img {
+        width:230px;
+        margin-left:-30px;
+        margin-top:-9px;
+        
+} 
 }
 
 .ycontainer {
@@ -320,6 +371,10 @@ footer ul li {
     .tabz {
         margin-top:30px;
     }
+    
+    .panel-title {
+        font-size:20px;
+    }
 }
 
         .head .col-md-12 h1 {
@@ -348,7 +403,78 @@ footer ul li {
 
 }
 
+.panel-title {
+    font-size:30px;
+}
 
+@media(max-width:480px) {
+
+    .panel-title {
+        font-size:20px;
+    }
+    
+    .videoz {
+        width:100px;
+    }
+}
+
+//TEMP SPLASH SCREEN CSS
+
+.splash {
+    font-size:100px;
+    color:white;
+    font-family: 'bodoqueregular', 'Helvetica Neue',Arial;
+}
+
+.blackout {
+    padding-top:200px;
+    text-align:center;
+    background-color:#1a1a1a;
+    height:1000px;
+}
+//END OF TEMP SPLASH SCREEN CSS
+
+
+//CONTACT/ABOUT PAGE
+
+.contact h1, .contact p, .contact1 h1, .contact1 p {
+    color:lightgrey;
+}
+
+.contact1 {
+    text-align: center;
+    margin-top: 140px;
+}
+
+.contact1 a, .contact p {
+    font-size:18px;
+}
+
+.contact1 i {
+    margin-bottom:15px;
+}
+
+.foter a {
+    color:lightgray;
+    height:100%;
+}
+
+#aboutme {
+    width:200px;
+    border-radius:25px;
+    float:left;
+    padding-right:10px;
+}
+
+.contact h1 {
+    text-align: center;
+}
+    
+@media(max-width:480px) {
+    .contact1 {
+        margin-top:50px;
+    }
+}
 
 
 

@@ -15,6 +15,7 @@
 //= require jquery.purr
 //= require best_in_place
 //= require chartkick
+//= require ios_splash
 //= require bootstrap
 //= require turbolinks
 //= require_tree .

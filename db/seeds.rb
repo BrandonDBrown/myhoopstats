@@ -15,4 +15,4 @@ User.create!(name: "brandong brown", email: "brandon.bbrandon@gmail.com", passwo
 end
     
 
-Practice.create!(makeft: 0, totalft: 0, percentageft: 0, makejs: 0, totaljs: 0, percentagejs: 0, user_id: 1)
+#Practice.create!(makeft: 0, totalft: 0, percentageft: 0, makejs: 0, totaljs: 0, percentagejs: 0, user_id: 1)

@@ -3,12 +3,20 @@
 <head>
   <title><%= full_title(yield(:title)) %></title>
 
-          <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<!--MOBILE WEB APP OPTIMIZATION CODE-->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<!--
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+-->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    
 <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
+    <%= favicon_link_tag '/logo1.ico' %>
 </head>
 <body>
     
@@ -24,9 +32,10 @@
             <span class="icon-bar"></span>
           </button>
             
-          <div class="navbar-brand"><img src="<%= image_path('logo.png') %>", style="max-width:50px"; /></div>
+          <div class="navbar-brand brandlogo"><img src="<%= image_path('logo1.png') %>", style="max-width:50px"; /></div>
+            <div class="navbar-brand brandname"><%= link_to(image_tag('brand-name.png'), root_path) %></div>
+                
             
-                <div class="navbar-brand"><%= link_to "MyHoopStats", root_path %></div>   
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <% if logged_in? %>
@@ -44,6 +53,7 @@
                 <% else %><% end %>
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                 <li><%= link_to "How To", howto_path %></li>
+                <li><%= link_to "Contact", contact_path %></li>
                 <li class="divider"></li>
                 <li><%= link_to "Log out", logout_path, method: "delete" %></li>
                                 </ul>

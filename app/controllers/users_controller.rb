@@ -14,7 +14,6 @@ class UsersController < ApplicationController
         @overalltotalft = @user.practices.sum(:totalft)
         @overallmakejs = @user.practices.sum(:makejs)
         @overalltotaljs = @user.practices.sum(:totaljs)
-        
     end
     
     def new

@@ -21,7 +21,7 @@
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid"> 
                         <div class="col-xs-5 col5o">FTA<h6>Overall</h6></div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0<% else %><%=  @overallmakeft %>/<%= @overalltotalft %><% end %></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0/0<% else %><%=  @overallmakeft %>/<%= @overalltotalft %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
@@ -33,7 +33,7 @@
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
                         <div class="col-xs-5 col5o">FTA<h6><% if @user.practices.pluck(:totalft).blank? %>No data<% else %><%= @user.practices.select("makeft, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y") %><% end %></h6></div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0<% else %><%= @user.practices.order("created_at ASC").last.makeft %>/<%= @user.practices.order("created_at ASC").last.totalft %><% end %></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0/0<% else %><%= @user.practices.order("created_at ASC").last.makeft %>/<%= @user.practices.order("created_at ASC").last.totalft %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
@@ -53,7 +53,7 @@
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
                         <div class="col-xs-5 col5r">FGA<h6>Overall</h6></div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0<% else %><%=  @overallmakejs %>/<%= @overalltotaljs %><% end %></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0/0<% else %><%=  @overallmakejs %>/<%= @overalltotaljs %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">
@@ -64,8 +64,8 @@
                 </div>
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5r">FGA<h6><% if @user.practices.pluck(:totaljs).blank? %>No Data<% else %><%= @user.practices.select("makejs, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y") %><% end %></h6></div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0<% else %><%= @user.practices.order("created_at ASC").last.makejs %>/<%= @user.practices.order("created_at ASC").last.totaljs %><% end %></div>
+                        <div class="col-xs-5 col5r">FGA<h6><% if @user.practices.pluck(:totaljs).blank? %>No data<% else %><%= @user.practices.select("makejs, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y") %><% end %></h6></div>
+                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0/0<% else %><%= @user.practices.order("created_at ASC").last.makejs %>/<%= @user.practices.order("created_at ASC").last.totaljs %><% end %></div>
                     </div>
                 </div>
                 <div class="col-md-12 wider">

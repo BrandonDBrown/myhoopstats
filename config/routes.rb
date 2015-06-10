@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get 'howto' => 'pages#howto'
+  get 'contact' => 'pages#contact'
   get 'cookie' => 'pages#cookie'
   get 'terms' => 'pages#terms'
   get 'privacy' => 'pages#privacy'

@@ -147,9 +147,7 @@ document.getElementById("practice_percentagejs").value = 0;
 
 //SAVE FUNCTION
     Hammer(button5).on("tap", function() {
-        if(setme === "Free Throw") {
-        
-//        Reset
+        //        Reset
         dmakeft = 0;
         dtotalft = 0;
         ftperct = 0;
@@ -169,38 +167,9 @@ document.getElementById("practice_percentagejs").value = 0;
         document.getElementById("test3").innerHTML = '0';
         document.getElementById("test4").innerHTML = '0'; 
         
-//        BUTTON SOUND
+//                BUTTON SOUND
         $(".save-play")[0].currentTime = 0;
         return $(".save-play")[0].play();
-            
-        } else {
-                
-//        Reset
-        dmakejs = 0;
-        dtotaljs = 0;
-        jsperc = 0;
-        jsperct = 0;
-        dmakeft = 0;
-        dtotalft = 0;
-        ftperct = 0;
-        ftperc = 0;
-
-            
-        setTimeout(function() {
-        o.set('square-check').size(30);
-        o.color('green');
-        }, 100);
-        
-        
-        document.getElementById("test1").innerHTML = '0';
-        document.getElementById("test2").innerHTML = '0';
-        document.getElementById("test3").innerHTML = '0';
-        document.getElementById("test4").innerHTML = '0';
-            
-        //        BUTTON SOUND
-        $(".save-play")[0].currentTime = 0;
-        return $(".save-play")[0].play();
-        }
     }); 
 
 
@@ -346,7 +315,7 @@ if(setme === "Free Throw") {
         document.getElementById("test3").innerHTML = '0';
         document.getElementById("test4").innerHTML = '0'; 
         
-        //        BUTTON SOUND
+//                BUTTON SOUND
         $(".save-play")[0].currentTime = 0;
         return $(".save-play")[0].play();
     };    
@@ -369,7 +338,7 @@ if(setme === "Free Throw") {
   annyang.addCommands(commands);
 
   // Start listening.
-  annyang.start();
+  annyang.start({autoRestart: true});
 }
     
 
