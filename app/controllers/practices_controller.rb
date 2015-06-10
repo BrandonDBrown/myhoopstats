@@ -2,14 +2,23 @@ class PracticesController < ApplicationController
     before_action :logged_in_user, only: [:create, :update, :edit]
 
     
-    def create
-        @practice = current_user.practices.build(practice_params) 
+    def create 
+        @practice = current_user.practices.build(practice_params)
+        respond_to do |format|
         if @practice.save
-            redirect_to(:back) 
+            format.html { redirect_to practice_path(current_user) }
+      format.js   {}
+      format.json { render json: practice_path(current_user), status: :created, location: practice_path(current_user) }
+#            flash[:success] = "Data save"
+#            redirect_to practice_path(current_user)
         else
-            flash[:danger] = "Make/Miss cannot be 0"
-            redirect_to(:back)
+                        
+format.html { render action: "new" }
+      format.json { render json: @practice.errors, status: :unprocessable_entity }
+#            flash[:danger] = "Data not saved"
+#            redirect_to(:back)
         end
+            end
     end
     
     def edit
