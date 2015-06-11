@@ -3,23 +3,14 @@ class PracticesController < ApplicationController
 
     
     def create 
-        @practices = current_user.practices.build(practice_params)
-        
-#        respond_to do |format|
-#            if @practice.save
-#                format. html
-#                format.js { render 'create.js.erb' }
-#            else
-#                format.html { render :action => "new" }  
-#                format.js
-     
-#            flash[:success] = "Data save"
-#            redirect_to practice_path(current_user)
-
-#            flash[:danger] = "Data not saved"
-#            redirect_to(:back)
-#end
-#            end
+        @practices = current_user.practices.build(practice_params)      
+            if @practices.save
+            flash[:success] = "Data save"
+            redirect_to practice_path(current_user)
+            else
+            flash[:danger] = "Data not saved"
+            redirect_to(:back)
+            end
     end
     
     def edit

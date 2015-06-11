@@ -11,11 +11,11 @@
 -->
     <meta name="mobile-web-app-capable" content="yes">
 
-    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= favicon_link_tag '/logo1.ico' %>
     
 </head>
@@ -41,7 +41,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <% if logged_in? %>
             <ul class="nav navbar-nav navbar-right">
-            <li data-no-turbolink><%= link_to "Dashboard", current_user %></li>
+            <li><%= link_to "Dashboard", current_user %></li>
             <li data-no-turbolink><%= link_to "Practice", practice_path(current_user) %></li>
 <!--            <li><%= link_to "Game", '#' %></li>-->
                             <li class="dropdown">
@@ -83,8 +83,8 @@
 
 <%= yield %>
     
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  
+
+  <%= javascript_include_tag 'app.js' %>
 <!--<%= debug(params) if Rails.env.development? %>-->
 </body>
 </html>
