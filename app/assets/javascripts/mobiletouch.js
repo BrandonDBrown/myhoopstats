@@ -78,6 +78,7 @@ document.getElementById("practice_percentagejs").value = 0;
 //        BUTTON SOUND
         $(".audio-play")[0].currentTime = 0;
         return $(".audio-play")[0].play();
+            
         } else {
             
         dmakejs = dmakejs + 1;
