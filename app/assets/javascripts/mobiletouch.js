@@ -1,4 +1,4 @@
-$(document).ready(function(){
+//$(document).ready(function(){
 var dmakeft = 0;
 var dtotalft = 0;
 
@@ -342,7 +342,7 @@ if(setme === "Free Throw") {
   // Start listening.
   annyang.start({autoRestart: true});
 }
-});
+//});
     
 
 
