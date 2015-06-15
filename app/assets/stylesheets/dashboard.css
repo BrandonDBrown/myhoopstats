@@ -34,7 +34,7 @@
 .col5o {
     height: 14vh;
     font-size:4vh;
-    padding-top:2.8vh;
+    padding-top:2.4vh;
     padding-right:0;
     padding-left: 8%;
     border-left: 12px solid #59B2E6;
@@ -43,25 +43,17 @@
 
 .col5o h6, .col5r h6 {
     color:#666;
-    margin-top:5%;
-}
-
-.col6fg {
-    cursor:pointer;
+    margin-top:4%;
 }
 
 .col5r {
     height: 14vh;
     font-size:4vh;
-    padding-top:2.8vh;
+    padding-top:2.4vh;
     padding-right:0;
     padding-left: 8%;
     border-left: 12px solid #029f5b;
     text-align:left;
-}
-
-.col5r h2, .col5o h2 {
-   margin-top:1%;
 }
 
 .col7 {
@@ -69,7 +61,14 @@
     padding-top: 3.5vh;
 }
 
-
+@media(max-height:350px) {
+    .col5r, .col5o, .dashgrid {
+        height:18vh;
+    }
+    .col7 {
+       padding-top:4.8vh;   
+    }
+}
 .lastly {
     margin-bottom:0px;
 }
@@ -144,35 +143,34 @@
 /*STAT HEADER CSS*/
 
 .panel-tabs {
-    height:3em;
-}
-
-
-.panel-tabs .tabs-heading {
-    padding-top:10px;
-    padding-bottom:10px;
+    height:2.8em;
 }
 
 .col6fg {
-
 	text-decoration: none;
 	color: #666;
 	font-weight: bold;
 	font-size: 15px;
+    cursor:pointer;
 	-webkit-transition: all 0.1s linear;
 	-moz-transition: all 0.1s linear;
 	transition: all 0.1s linear;
+    height:100%;
+    padding-top:9px;
 }
+
+
 
 .activeo {
 	color: #59B2E6;
 	font-size: 18px;
-
+    border-bottom: 3px solid #59B2E6; 
 }
 
 .activer {
 	color: #029f5b;
 	font-size: 18px;
+    border-bottom: 3px solid #029f5b; 
 }
 
 #users-chart1 {

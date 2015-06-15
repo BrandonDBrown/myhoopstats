@@ -27,14 +27,14 @@ hr {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    opacity:.75;
+    opacity:.80;
     position:absolute;
     -webkit-filter: blur(1.8px);
     -moz-filter: blur(1.8px);
     -o-filter: blur(1.8px);
     -ms-filter: blur(1.8px);
     filter: blur(1.8px);
-    
+
     /* Set rules to fill background */
     min-height: 90%;
     min-width: 300px;
@@ -46,7 +46,7 @@ hr {
 @media(max-width:480px) {
     .background-pic {
         height:200%;
-        min-height:100%;
+        bottom:-380px;        
     }
 }
 
@@ -60,7 +60,7 @@ hr {
     font-family: 'bodoqueregular', 'Helvetica Neue',Arial;
     right:0;
     left:0;
-    top:24vh;
+    top:16vh;
     text-shadow: .5px .5px white;
 }
 
@@ -101,12 +101,11 @@ header .header-content .header-content-inner p {
 @media(min-width:992px) {
     header {
         min-height: 90%;
-
     }
 
     header .header-content {
         position: absolute;
-        top: 37%;
+        top: 42%;
         padding: 0 50px;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
@@ -130,7 +129,7 @@ header .header-content .header-content-inner p {
         margin-left: auto;
         max-width: 80%;
         font-size: 20px;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         text-shadow: 1px 1px #1a1a1a;
        
     }
