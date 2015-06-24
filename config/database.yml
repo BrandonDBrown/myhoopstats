@@ -27,6 +27,8 @@ production:
   <<: *default
   database: myhoopstats
   adapter: postgresql
+  username: brandonbrown
+  password: 
 
 
   
