@@ -25,7 +25,7 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: myhoopstats
+  database: db/production.sqlite3
   
 
 

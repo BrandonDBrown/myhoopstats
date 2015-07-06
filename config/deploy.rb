@@ -9,7 +9,7 @@ require 'mina/rvm'
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :domain, 'myhoopstats.com'
-set :user, 'myhoopstats'
+set :user, 'brandonbrown'
 set :deploy_to, '/home/myhoopstats/app'
 set :repository, 'git@bitbucket.org:infiniteyslummer/shot_tracker_new.git'
 set :branch, 'master'
