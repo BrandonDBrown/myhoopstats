@@ -7,7 +7,6 @@
 default: &default
   encoding: utf8
   pool: 5
-#  host: localhost
   timeout: 5000
 
 development:
@@ -25,10 +24,10 @@ test:
 
 production:
   <<: *default
-  database: myhoopstats
   adapter: postgresql
-  username: brandonbrown
-  password: 
+  database: db/production.sqlite3
+  
+
 
 
   
