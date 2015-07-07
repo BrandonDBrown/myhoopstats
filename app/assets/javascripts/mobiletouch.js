@@ -40,6 +40,10 @@ document.getElementById("practice_percentagejs").value = 0;
         $(".toggler2").removeClass('active1');
         o.set('square-o').size(30);
         o.color('#1a1a1a'); 
+        
+        //        BUTTON SOUND
+        $(".click-play")[0].currentTime = 0;
+        return $(".click-play")[0].play();
     });
 //SET JUMP SHOT
     Hammer(button2).on("tap", function() {
@@ -48,6 +52,10 @@ document.getElementById("practice_percentagejs").value = 0;
         $(".toggler1").removeClass('active1');
         o.set('square-o').size(30);
         o.color('#1a1a1a');
+        
+                //        BUTTON SOUND
+        $(".click-play")[0].currentTime = 0;
+        return $(".click-play")[0].play();
     });    
      
 //MAKE FUNCTION
@@ -126,6 +134,10 @@ document.getElementById("practice_percentagejs").value = 0;
         n.set('circle-o');
         }, 300);
         n.set('circle-o-times').size(30);
+        
+                        //        BUTTON SOUND
+        $(".miss-play")[0].currentTime = 0;
+        return $(".miss-play")[0].play();
             
         } else {
         
@@ -145,6 +157,10 @@ document.getElementById("practice_percentagejs").value = 0;
         }, 300);
         n.set('circle-o-times').size(30);
         }
+        
+                        //        BUTTON SOUND
+        $(".miss-play")[0].currentTime = 0;
+        return $(".miss-play")[0].play();
     });
 
 //SAVE FUNCTION
@@ -186,7 +202,11 @@ if (annyang) {
         $(".toggler1").addClass('active1');
         $(".toggler2").removeClass('active1');
         o.set('square-o').size(30);
-        o.color('#1a1a1a');  
+        o.color('#1a1a1a'); 
+        
+                //        BUTTON SOUND
+        $(".click-play")[0].currentTime = 0;
+        return $(".click-play")[0].play();
     };
 
 //SET JUMP SHOT
@@ -196,6 +216,10 @@ if (annyang) {
         $(".toggler1").removeClass('active1');
         o.set('square-o').size(30);
         o.color('#1a1a1a');
+        
+                //        BUTTON SOUND
+        $(".click-play")[0].currentTime = 0;
+        return $(".click-play")[0].play();
     };    
         
     var make = function() {
@@ -271,7 +295,10 @@ if(setme === "Free Throw") {
         n.set('circle-o');
         }, 300);
         n.set('circle-o-times').size(30);
-            
+        
+                //        BUTTON SOUND
+        $(".miss-play")[0].currentTime = 0;
+        return $(".miss-play")[0].play();    
         } else {
         
         dtotaljs = dtotaljs +1;
@@ -290,6 +317,10 @@ if(setme === "Free Throw") {
         }, 300);
         n.set('circle-o-times').size(30);
         }
+        
+                        //        BUTTON SOUND
+        $(".miss-play")[0].currentTime = 0;
+        return $(".miss-play")[0].play();
     };
 
     

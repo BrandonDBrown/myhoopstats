@@ -35,6 +35,9 @@ if ($(window).width() < 768 ) {
 
  $('.dropdown-toggle').dropdown();
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();

@@ -34,6 +34,7 @@
     background-color:black;
     width:40em;
     margin-top:60px;
+
 }
 
 @media (max-width: 700px) {
@@ -41,6 +42,9 @@
         width:100%;
         margin-top:0px;
         
+    }
+    .btn-prac {
+        height:50vh;
     }
 }
 
@@ -103,8 +107,15 @@
     height:200px;
 }
 
+
+@media (max-width: 700px) {
+    .btn-prac {
+        height:50vh;
+    }
+}
+
 .btnsave {
- background-color:lightgrey; 
+    background-color:lightgrey; 
     border-radius:0;
 }
 

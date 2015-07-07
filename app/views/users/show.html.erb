@@ -43,7 +43,7 @@
                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid lastly" id="lastrow">
                         <div class="col-xs-5 col5o">Goal<h6>Click to set</h6></div>
-                        <div class="col-xs-7 col7"><% if @user.ftgoal.blank? %>0%<% else %><%= best_in_place @user, :ftgoal, {:inner_class => "input-field", :type => :input} %>%<% end %></div>
+                        <div class="col-xs-7 col7" data-toggle="tooltip" data-placement="bottom" title="Click to set goal"><% if @user.ftgoal.blank? %>0%<% else %><%= best_in_place @user, :ftgoal, {:inner_class => "input-field", :type => :input} %>%<% end %></div>
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                                 <div class="col-md-12 wider">
                     <div class="thumbnail dashgrid lastly" id="lastrow2">
                                                 <div class="col-xs-5 col5r">Goal<h6>Click to set</h6></div>
-                        <div class="col-xs-7 col7"><% if @user.jsgoal.blank? %>0%<% else %><%= best_in_place @user, :jsgoal, {:inner_class => "input-field", :type => :input} %>%<% end %></div>
+                        <div class="col-xs-7 col7" data-toggle="tooltip" data-placement="bottom" title="Click to set goal"><% if @user.jsgoal.blank? %>0%<% else %><%= best_in_place @user, :jsgoal, {:inner_class => "input-field", :type => :input} %>%<% end %></div>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@
     </div>
         <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 pads" id="pads">
             
-                <div class="col-md-12 graph1 Fthrow" id="user1-chart"> 
+                <div class="col-md-12 col-xs-12 graph1 Fthrow" id="user1-chart"> 
                     
     <%= line_chart [ 
         {name: "Free Throw Percentage", data: @user.practices.group("percentageft,created_at").having("percentageft > 0").sum("percentageft")},         {name: "Field Goal Percentage", data: @user.practices.group("percentagejs,created_at").having("percentagejs > 0").sum("percentagejs") }
