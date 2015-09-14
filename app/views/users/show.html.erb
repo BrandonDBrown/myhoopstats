@@ -5,90 +5,99 @@
 <div class="jumbotron fitme">
       <div class="container">
         <div class="row row-eq-height" id="row-eq-height">
+            
+<!--LEFT SIDE STATS-->
           <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
             <div class="row">
-                    <div class="thumbnail dashgrid panel-tabs">
-                            <div class="col-xs-6 col6fg activeo" id="overall-link">
-								Free throw
-							</div>
-							<div class="col-xs-6 col6fg" id="recent-link">
-								Field goal
-							</div>
+<!--STATS HEADER ROW 1-->
+                <div class="thumbnail dashgrid panel-tabs">
+                    <div class="col-xs-6 activel" id="overall-link">
+				        Free throw
+				    </div>
+				    <div class="col-xs-6" id="recent-link">
+				        Field goal
+				    </div>
                 </div>
-            <div class="overall-form" style="display: block;">
-                <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid"> 
-                        <div class="col-xs-5 col5o">FTA<h6>Overall</h6></div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0/0<% else %><%=  @overallmakeft %>/<%= @overalltotalft %><% end %></div>
+<!--FREETHROW STATS-->
+                <div class="overall-form" style="display: block;">
+                    <div class="col-md-12 wider">
+                        <div class="thumbnail dashgrid"> 
+                            <div class="col-xs-5 col5o">FTA<h6>Overall</h6></div>
+                            <div class="col-xs-7 col7"><%=  @overallmakeft %>/<%= @overalltotalft %></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5o">FT%<h6>Overall</h6></div>
-                        <div class="col-xs-7 col7"><% if @overallmakeft == 0 %>0%<% else %><%= ((@overallmakeft.to_f/@overalltotalft.to_f)*100).round %>%<% end %></div>
+                    <div class="col-md-12 wider">
+                        <div class="thumbnail dashgrid">
+                            <div class="col-xs-5 col5o">FT%<h6>Overall</h6></div>
+                            <div class="col-xs-7 col7"><%= @overallpercft %>%</div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5o">FTA<h6><% if @user.practices.pluck(:totalft).blank? %>No data<% else %><%= @user.practices.select("makeft, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y") %><% end %></h6></div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0/0<% else %><%= @user.practices.order("created_at ASC").last.makeft %>/<%= @user.practices.order("created_at ASC").last.totalft %><% end %></div>
+                    <div class="col-md-12 wider">
+                        <div class="thumbnail dashgrid">
+                            <div class="col-xs-5 col5o">FTA<h6><%= @dateft %></h6></div>
+                            <div class="col-xs-7 col7"><%= @recentmakeft %>/<%= @recenttotalft %></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5o">FT%<h6><% if @user.practices.pluck(:totalft).blank? %>No data<% else %><%= @user.practices.select("percentageft, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y") %><% end %></h6></div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totalft).blank? %>0%<% else %><%= @user.practices.order("created_at ASC").last.percentageft.round %>%<% end %></div>
+                    <div class="col-md-12 wider">
+                        <div class="thumbnail dashgrid">
+                            <div class="col-xs-5 col5o">FT%<h6><%= @dateft %></h6></div>
+                            <div class="col-xs-7 col7"><%= @recentpercft %>%</div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid lastly" id="lastrow">
-                        <div class="col-xs-5 col5o">Goal<h6>Click to set</h6></div>
-                        <div class="col-xs-7 col7" data-toggle="tooltip" data-placement="bottom" title="Click to set goal"><% if @user.ftgoal.blank? %>0%<% else %><%= best_in_place @user, :ftgoal, {:inner_class => "input-field", :type => :input} %>%<% end %></div>
-                    </div>
-                </div>
-            </div>
-            <div class="recent-form" style="display: none;">
-                <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5r">FGA<h6>Overall</h6></div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0/0<% else %><%=  @overallmakejs %>/<%= @overalltotaljs %><% end %></div>
-                    </div>
-                </div>
-                <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5r">FG%<h6>Overall</h6></div>
-                        <div class="col-xs-7 col7"><% if @overallmakejs == 0 %>0%<% else %><%= ((@overallmakejs.to_f/@overalltotaljs.to_f)*100).round %>%<% end %></div>
-                    </div>
-                </div>
-                <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5r">FGA<h6><% if @user.practices.pluck(:totaljs).blank? %>No data<% else %><%= @user.practices.select("makejs, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y") %><% end %></h6></div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0/0<% else %><%= @user.practices.order("created_at ASC").last.makejs %>/<%= @user.practices.order("created_at ASC").last.totaljs %><% end %></div>
-                    </div>
-                </div>
-                <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid">
-                        <div class="col-xs-5 col5r">FG%<h6><% if @user.practices.pluck(:totaljs).blank? %>No data<% else %><%= @user.practices.select("percentagejs, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y") %><% end %></h6></div>
-                        <div class="col-xs-7 col7"><% if @user.practices.pluck(:totaljs).blank? %>0%<% else %><%= @user.practices.order("created_at ASC").last.percentagejs.round %>%<% end %>
+                    <div class="col-md-12 wider">
+                        <div class="thumbnail dashgrid lastly" id="lastrow">
+                            <div class="col-xs-5 col5o">Goal<h6>Click to set</h6>
+                            </div>
+                            <div class="col-xs-7 col7" data-toggle="tooltip" data-placement="bottom" title="Click to set goal"><% if @user.ftgoal.blank? %>0%<% else %><%= best_in_place @user, :ftgoal, {:inner_class => "input-field", :type => :input} %>%<% end %>
+                            </div>
                         </div>
                     </div>
                 </div>
-                                <div class="col-md-12 wider">
-                    <div class="thumbnail dashgrid lastly" id="lastrow2">
-                                                <div class="col-xs-5 col5r">Goal<h6>Click to set</h6></div>
-                        <div class="col-xs-7 col7" data-toggle="tooltip" data-placement="bottom" title="Click to set goal"><% if @user.jsgoal.blank? %>0%<% else %><%= best_in_place @user, :jsgoal, {:inner_class => "input-field", :type => :input} %>%<% end %></div>
+<!--FIELD GOAL STATS-->
+                <div class="recent-form" style="display: none;">
+                    <div class="col-md-12 wider">
+                        <div class="thumbnail dashgrid">
+                            <div class="col-xs-5 col5r">FGA<h6>Overall</h6></div>
+                            <div class="col-xs-7 col7"><%=  @overallmakejs %>/<%= @overalltotaljs %></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 wider">
+                        <div class="thumbnail dashgrid">
+                            <div class="col-xs-5 col5r">FG%<h6>Overall</h6></div>
+                            <div class="col-xs-7 col7"><%= @overallpercjs %></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 wider">
+                        <div class="thumbnail dashgrid">
+                            <div class="col-xs-5 col5r">FGA<h6><%= @datejs %></h6></div>
+                            <div class="col-xs-7 col7"><%= @recentmakejs %>/<%= @recenttotaljs %></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 wider">
+                        <div class="thumbnail dashgrid">
+                            <div class="col-xs-5 col5r">FG%<h6><%= @datejs %></h6></div>
+                            <div class="col-xs-7 col7"><%= @recentpercjs %>%</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 wider">
+                        <div class="thumbnail dashgrid lastly" id="lastrow2">
+                            <div class="col-xs-5 col5r">Goal<h6>Click to set</h6></div>
+                            <div class="col-xs-7 col7" data-toggle="tooltip" data-placement="bottom" title="Click to set goal"><% if @user.jsgoal.blank? %>0%<% else %><%= best_in_place @user, :jsgoal, {:inner_class => "input-field", :type => :input} %>%<% end %></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-        <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 pads" id="pads">
-            
-                <div class="col-md-12 col-xs-12 graph1 Fthrow" id="user1-chart"> 
+
+<!--GRAPHS-->
+        <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 pads">
+            <div class="col-md-12 col-xs-12 graph1 Fthrow" id="user1-chart"> 
                     
-    <%= line_chart [ 
-        {name: "Free Throw Percentage", data: @user.practices.group("percentageft,created_at").having("percentageft > 0").sum("percentageft")},         {name: "Field Goal Percentage", data: @user.practices.group("percentagejs,created_at").having("percentagejs > 0").sum("percentagejs") }
-    ], {id: "users-chart1", height: "80vh", 
+    <%= line_chart [
+    {   name: "Free Throw Percentage", 
+        data: @user.practices.group("percentageft,created_at").having("percentageft > 0").sum("percentageft")},           {   name: "Field Goal Percentage", 
+        data: @user.practices.group("percentagejs,created_at").having("percentagejs > 0").sum("percentagejs")}], 
+    {   id: "users-chart1", height: "78vh", 
             library: {         
                 series: {
           0 => {targetAxisIndex: 0, lineWidth: "3", pointSize:"6"},
@@ -106,12 +115,13 @@
                 titleTextStyle: {color: "#333333"}
       }}  %>
                       
-                </div>
-                            <div class="col-md-12 graph1 Fgoal" id="user2-chart"> 
+            </div>
+            <div class="col-md-12 graph1 Fgoal" id="user2-chart"> 
                     
     <%= line_chart [ 
-        {name: "Field Goal Percentage", data: @user.practices.group("percentageft,created_at").having("percentageft > 0").sum("percentageft")},         {name: "Field Goal Percentage", data: @user.practices.group("percentagejs,created_at").having("percentagejs > 0").sum("percentagejs") }
-    ], {id: "users-chart2", height: "80vh", 
+    {       name: "Field Goal Percentage", 
+            data: @user.practices.group("percentageft,created_at").having("percentageft > 0").sum("percentageft")},       {       name: "Field Goal Percentage", 
+            data: @user.practices.group("percentagejs,created_at").having("percentagejs > 0").sum("percentagejs")}],     {       id: "users-chart2", height: "78vh", 
             library: {         
                 series: {
           0 => {targetAxisIndex: 0, lineWidth: "0", pointSize:"0"},
@@ -129,8 +139,7 @@
                 titleTextStyle: {color: "#333333"}
       }}  %>
                       
-                </div>
-                
+            </div>    
         </div>
     </div>
 </div>

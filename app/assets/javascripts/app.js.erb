@@ -1,4 +1,4 @@
-  
+//Jquery to add and remove styling on the dashboard statistics and graphs
 if ($(window).width() < 768 ) {
         $('#row-eq-height').removeClass('row-eq-height');
         $('#lastrow').removeClass('lastly');
@@ -16,7 +16,7 @@ if ($(window).width() < 768 ) {
         $("#user1-chart").removeClass('Fgoal');
         $("#user1-chart").addClass('Fthrow');
 		$('#recent-link').removeClass('activer');
-		$(this).addClass('activeo');
+		$(this).addClass('activel');
 		e.preventDefault();
 	});
     $('#recent-link').click(function(e) {
@@ -26,20 +26,21 @@ if ($(window).width() < 768 ) {
         $("#user1-chart").addClass('Fgoal');
         $("#user2-chart").removeClass('Fgoal');
         $("#user2-chart").addClass('Fthrow');
-		$('#overall-link').removeClass('activeo');
+		$('#overall-link').removeClass('activel');
 		$('#recent-link').addClass('activer');
 		e.preventDefault();
 	});
 
 
-
+//Bootstrap Jqery
  $('.dropdown-toggle').dropdown();
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
-  /* Activating Best In Place */
+
+//Activating Best In Place editing
   jQuery(".best_in_place").best_in_place();
 
 

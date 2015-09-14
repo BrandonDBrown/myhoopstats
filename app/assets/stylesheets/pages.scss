@@ -7,6 +7,7 @@ body {
     height: 100%;
 }
 
+//styling for navbar and pages views
 .navbar {
     position:relative;
     margin:0;
@@ -133,27 +134,28 @@ header .header-content .header-content-inner p {
         text-shadow: 1px 1px #1a1a1a;
        
     }
-        header .header-content .header-content-inner h1 {
+    header .header-content .header-content-inner h1 {
         font-size: 80px;
     }
-    #hlname {
-    position:absolute;
-    font-size:50px;
-    font-family: 'bodoqueregular', 'Helvetica Neue',Arial;
-    right:0;
-    left:0;
-    top:8vh;
-}
     
-}
-@media(max-width:470px) {
-    #hlogo {
-    width:100px;
+    #hlname {
+        position:absolute;
+        font-size:50px;
+        font-family: 'bodoqueregular', 'Helvetica Neue',Arial;
+        right:0;
+        left:0;
+        top:8vh;
+    }
 }
 
-#hlname {
-    display:none;
-}
+@media(max-width:470px) {
+    #hlogo {
+        width:100px;
+    }
+
+    #hlname {
+        display:none;
+    }
 }
 
 //navbar
@@ -172,15 +174,12 @@ header .header-content .header-content-inner p {
 }
 .brandlogo img {
     margin-top:-18px;
-//    padding:0;
 }
 
 @media(max-width:480px) {
     .brandlogo img {
         margin-top:-19px;
-
-}
-
+    }
 }
 
 @media(max-width:470px) {
@@ -188,14 +187,15 @@ header .header-content .header-content-inner p {
         display:none;
         position:absolute;
         
-}  
+    }  
     .brandname img {
         width:230px;
         margin-left:-30px;
         margin-top:-9px;
-        
-} 
+    } 
 }
+
+//Informational row
 
 .ycontainer {
     position:relative;
@@ -208,7 +208,7 @@ header .header-content .header-content-inner p {
 @media(max-width:992px) {
     .ycontainer {
         padding: 20px;
-}
+    }
 }
 
 .ycontainer p, .ycontainer h2 {
@@ -232,7 +232,7 @@ header .header-content .header-content-inner p {
 @media(max-width:992px) {
     .hcol-md-4 {
         margin-top:45px;
-}
+    }
     .xcontainer {
         padding:40px 0px;
     }
@@ -318,7 +318,7 @@ footer ul li {
     }
 }
 
-//HOW TO
+//HOW TO PAGE
 .head {
     position: relative;
     width: 100%;
@@ -379,8 +379,6 @@ footer ul li {
         .head .col-md-12 h1 {
         font-size: 60px;
     }
-    
-
 
 .background-pic7 {
     background-image: url(mobilebknd.png);
@@ -416,22 +414,6 @@ footer ul li {
         width:100px;
     }
 }
-
-//TEMP SPLASH SCREEN CSS
-
-.splash {
-    font-size:100px;
-    color:white;
-    font-family: 'bodoqueregular', 'Helvetica Neue',Arial;
-}
-
-.blackout {
-    padding-top:200px;
-    text-align:center;
-    background-color:#1a1a1a;
-    height:1000px;
-}
-//END OF TEMP SPLASH SCREEN CSS
 
 
 //CONTACT/ABOUT PAGE

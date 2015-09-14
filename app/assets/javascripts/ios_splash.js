@@ -1,4 +1,3 @@
-
 //CHANGE TO REFLECT EXTRACTED IMAGE PATH
 var img_path = 'assets/';
 

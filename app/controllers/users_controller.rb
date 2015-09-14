@@ -10,10 +10,57 @@ class UsersController < ApplicationController
     
     def show
         @user = User.find(params[:id])
-        @overallmakeft = @user.practices.sum(:makeft)
-        @overalltotalft = @user.practices.sum(:totalft)
-        @overallmakejs = @user.practices.sum(:makejs)
-        @overalltotaljs = @user.practices.sum(:totaljs)
+        if @user.practices.pluck(:totalft).blank?
+            @overallmakeft = 0
+            @overalltotalft = 0
+
+            
+            @dateft = "No Data"
+            @recentmakeft = 0
+            @recenttotalft = 0
+
+        else
+            @overallmakeft = @user.practices.sum(:makeft)
+            @overalltotalft = @user.practices.sum(:totalft)
+            
+            @dateft = @user.practices.select("makeft, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y")
+            @recentmakeft = @user.practices.order("created_at ASC").last.makeft
+            @recenttotalft = @user.practices.order("created_at ASC").last.totalft
+                
+        end
+        
+        if @overallmakeft == 0
+            @overallpercft = 0
+            @recentpercft = 0
+        else
+            @overallpercft = ((@overallmakeft.to_f/@overalltotalft.to_f)*100).round
+            @recentpercft = @user.practices.order("created_at ASC").last.percentageft.round
+        end
+        
+        if @user.practices.pluck(:totaljs).blank?
+            @overallmakejs = 0
+            @overalltotaljs = 0
+            
+            @datejs = "No Data"
+            @recentmakejs = 0
+            @recenttotaljs =  0
+        else
+            @overallmakejs = @user.practices.sum(:makejs)
+            @overalltotaljs = @user.practices.sum(:totaljs)
+            
+            @datejs = @user.practices.select("makejs, created_at").order("created_at ASC").last.created_at.strftime("%b %d, %Y")
+            @recentmakejs = @user.practices.order("created_at ASC").last.makejs
+            @recenttotaljs = @user.practices.order("created_at ASC").last.totaljs      
+        end
+        
+        if @overallmakejs == 0
+            @overallpercjs = 0
+            @recentpercjs = 0
+        else
+            @overallpercjs = ((@overallmakejs.to_f/@overalltotaljs.to_f)*100).round
+            @recentpercjs = @user.practices.order("created_at ASC").last.percentagejs.round
+        end
+        
     end
     
     def new

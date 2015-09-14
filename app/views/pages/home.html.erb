@@ -16,44 +16,43 @@
         </div>
     </header>
 
+<!--Informational row-->
     <div class="container ycontainer">
-      <!-- Example row of columns -->
       <div class="row">
           <div class="col-md-6">
-        <div class="col-lg-12 col-md-12 col-sm-12 hcol-md-4">
-          <h2>Track Stats</h2>
-            <span class="fa-stack fa-3x">
-                <i class="fa fa-square fa-stack-2x"></i>
-                <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
-            </span>
-          <p>Use MyHoopStats to track your free throw and field goal percentage overtime and set goals to improve your performance.</p>
-                        
-        </div>
-        <div class="col-lg-12 col-md-12 hcol-md-4">
-          <h2>Voice Activated</h2>
-            <span class="fa-stack fa-3x">
-                <i class="fa fa-square fa-stack-2x"></i>
-                <i class="fa fa-microphone fa-stack-1x fa-inverse"></i>
-            </span>    
-          <p>For Android users, use simple voice commands to track your progress.</p>
-       </div>
-        <div class="col-lg-12 col-md-12 hcol-md-4">
-          <h2>Web App</h2>
-            <span class="fa-stack fa-3x">
-                <i class="fa fa-square fa-stack-2x"></i>
-                <i class="fa fa-mobile fa-stack-1x fa-inverse fa-1x"></i>
-            </span>
-          <p>Simply access MyHoopStats on your phones web browser and track whether you are at the gym or the park.</p>
-        </div>
-              </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 hcol-md-4">
+                <h2>Track Stats</h2>
+                <span class="fa-stack fa-3x">
+                    <i class="fa fa-square fa-stack-2x"></i>
+                    <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
+                </span>
+                <p>Use MyHoopStats to track your free throw and field goal percentage overtime and set goals to improve your performance.</p>              
+            </div>
+            <div class="col-lg-12 col-md-12 hcol-md-4">
+                <h2>Voice Activated</h2>
+                <span class="fa-stack fa-3x">
+                    <i class="fa fa-square fa-stack-2x"></i>
+                    <i class="fa fa-microphone fa-stack-1x fa-inverse"></i>
+                </span>    
+                <p>For Android users, use simple voice commands to track your progress.</p>
+            </div>
+            <div class="col-lg-12 col-md-12 hcol-md-4">
+                <h2>Web App</h2>
+                <span class="fa-stack fa-3x">
+                    <i class="fa fa-square fa-stack-2x"></i>
+                    <i class="fa fa-mobile fa-stack-1x fa-inverse fa-1x"></i>
+                </span>
+                <p>Simply access MyHoopStats on your phones web browser and track whether you are at the gym or the park.</p>
+            </div>
+          </div>
           <div class="col-md-6 col-sm-12 hvideo">
-          <%= video_tag(["features.mov","features.mp4"], controls: true, size: "350x510", class: "videoz") %>
-              </div>
+            <%= video_tag(["features.mov","features.mp4"], controls: true, size: "350x510", class: "videoz") %>
+          </div>
       </div>
-</div> <!-- /container -->
-      
- <div class="container xcontainer">
-      <!-- Example row of columns -->
+    </div> <!-- /ycontainer -->
+
+<!--Contact row-->
+    <div class="container xcontainer">
       <div class="row">
         <div class="col-md-12">
           <h2>Contact Us</h2>
@@ -62,21 +61,22 @@
                 <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
             </span><br>
           <a href="myhoopstats@gmail.com">myhoopstats@gmail.com</a>
-
         </div>
       </div>
-</div> <!-- /container --> 
+    </div> <!-- /xcontainer --> 
+
+<!--Footer row-->
     <div class="container">
-<footer class="footer">
-  <small>
-    <%= link_to "MyHoopStats", root_url %>
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "Terms of Service",  terms_path %></li>
-      <li><%= link_to "Cookie Policy",   cookie_path %></li>
-      <li><%= link_to "Privacy Policy", privacy_path %></li>
-    </ul>
-  </nav>
-</footer>
+        <footer class="footer">
+            <small>
+                <%= link_to "MyHoopStats", root_url %>
+            </small>
+        <nav>
+            <ul>
+                <li><%= link_to "Terms of Service",  terms_path %></li>
+                <li><%= link_to "Cookie Policy",   cookie_path %></li>
+                <li><%= link_to "Privacy Policy", privacy_path %></li>
+            </ul>
+        </nav>
+        </footer>
     </div>

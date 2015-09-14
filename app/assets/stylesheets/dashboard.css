@@ -1,4 +1,4 @@
-
+/*Bootstrap function to ensure graph and stats columns are even*/
 .row-eq-height {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10,6 +10,7 @@
     padding-right:0px;
     padding-left:0px;
 }
+
 
 /*Dashboard Grid & Graph*/
 
@@ -24,21 +25,23 @@
     margin-top:0px;
     text-align:center;
 }
-/*
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    color:#1a1a1a;
-*/
 
-.col5o {
+/*Stat headings*/
+.dashgrid .col-xs-5 {
     height: 14vh;
     font-size:4vh;
     padding-top:2.4vh;
     padding-right:0;
     padding-left: 8%;
-    border-left: 12px solid #59B2E6;
     text-align:left;
+}
+
+.col5o {
+    border-left: 12px solid #59B2E6;
+}
+
+.col5r {
+    border-left: 12px solid #029f5b;
 }
 
 .col5o h6, .col5r h6 {
@@ -46,22 +49,13 @@
     margin-top:4%;
 }
 
-.col5r {
-    height: 14vh;
-    font-size:4vh;
-    padding-top:2.4vh;
-    padding-right:0;
-    padding-left: 8%;
-    border-left: 12px solid #029f5b;
-    text-align:left;
-}
-
+/*Stats values*/
 .col7 {
     font-size:5vh;
-    padding-top: 3.5vh;
-    
+    padding-top: 3.5vh; 
 }
 
+/*media query when as screen gets smaller*/
 @media(max-height:350px) {
     .col5r, .col5o, .dashgrid {
         height:18vh;
@@ -70,6 +64,8 @@
        padding-top:4.8vh;   
     }
 }
+
+/*Styling for last row of stats box for browser and mobile see app.js*/
 .lastly {
     margin-bottom:0px;
 }
@@ -78,25 +74,6 @@
     margin-bottom:5px;
 }
 
-.pads {
-    margin-left: 5px;
-    padding-right: 0px;
-    padding-left:0px;
-    background-color:whitesmoke;
-/*    float:right;*/
-}
-
-.graph1 {
-    text-align:center;
-    padding-right:3px;
-    padding-left:3px;
-    
-}
-/*
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-*/
     
 .background-pic2 {
     background-image: url(courtb.jpg);
@@ -117,9 +94,9 @@
 }
 
 .fitme {
- padding-top:30px; 
- padding-bottom:0px;
- margin-bottom:0px;
+    padding-top:30px; 
+    padding-bottom:0px;
+    margin-bottom:0px;
 }
 
 @media(max-width:768px) {
@@ -147,7 +124,7 @@
     height:2.8em;
 }
 
-.col6fg {
+.dashgrid .col-xs-6 {
 	text-decoration: none;
 	color: #666;
 	font-weight: bold;
@@ -160,30 +137,38 @@
     padding-top:9px;
 }
 
-
-
-.activeo {
+.dashgrid .activel {
 	color: #59B2E6;
 	font-size: 18px;
     border-bottom: 3px solid #59B2E6; 
 }
 
-.activer {
+.dashgrid .activer {
 	color: #029f5b;
 	font-size: 18px;
     border-bottom: 3px solid #029f5b; 
 }
 
-#users-chart1 {
-    padding-top:20px;
+/*GRAPHS*/
+
+.pads {
+    margin-left: 5px;
+    padding-right: 0px;
+    padding-left:0px;
+    background-color:whitesmoke;
 }
 
-#users-chart2 {
-    padding-top:20px;
+.graph1 {
+    text-align:center;
+    padding-right:3px;
+    padding-left:3px;
+    
 }
 
-.input-field {
-    width: 70px;
+/*individual chart styling with classes to change during click see app.js*/
+
+#users-chart1, #users-chart2 {
+    padding-top:15px;
 }
 
 .Fthrow {
@@ -191,10 +176,8 @@
     position:absolute;
 }
 
-
 .Fgoal {
     z-index:9;
-
 }
 
 @media(max-width:992px) {
@@ -204,7 +187,7 @@
     }
 }
 
-
+/*media queries for graphs*/
 @media(max-width:768px) {
     .Fthrow, .Fgoal {
         position:relative;
@@ -213,7 +196,11 @@
     .pads {
     margin-left: 0px;
     }
+}
 
+/*goal setting edit box styling*/
+.input-field {
+    width: 70px;
 }
 
 

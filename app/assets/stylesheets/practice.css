@@ -40,8 +40,7 @@
 @media (max-width: 700px) {
     .scontainer {
         width:100%;
-        margin-top:0px;
-        
+        margin-top:0px; 
     }
     .btn-prac {
         height:50vh;
@@ -50,11 +49,6 @@
 
 .navbar {
     border:none;
-/*
-    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
-*/
 }
 
 /*PRACTICE BUTTONS*/
@@ -112,6 +106,12 @@
     .btn-prac {
         height:50vh;
     }
+    .toggler1, .toggler2 {
+        height:15vh;   
+    }
+    .btnsave {
+        height:15vh;   
+    }
 }
 
 .btnsave {
@@ -122,35 +122,11 @@
 .btnn {
     cursor: default;
 }
-/*
-.toggler1:hover, .toggler2:hover {
-    -webkit-transition: color 1s; 
-    transition: color 1s;
-    color: white;
-    cursor: pointer;
-    background-color:gray;
-    -webkit-transition: background-color 1s; 
-    transition: background-color 1s;
-}
-*/
-
-/*
-.btn-nav:hover {
-    color: white;
-    cursor: pointer;
-    -webkit-transition: color 1s; 
-    transition: color 1s;
-    background-color:gray;
-    -webkit-transition: background-color 1s; 
-    transition: background-color 1s;
-}
-*/
 
 .toggler1.active1, .toggler2.active1 {
     color: #1a1a1a;
     padding: 2px;
 	border-top: 6px solid #f05f40;
-/*	border-bottom: 6px solid #e92d00;*/
     border-left: 0;
     border-right: 0;
     box-sizing:border-box;
@@ -200,45 +176,24 @@
 	font-size: 30px;
 }
 
-
-/*
-@media (max-width: 480px) {
-    .btn-group {
-        display: block !important;
-        float: none !important;
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-}
-*/
 @media (max-width: 600px) {
     .btn-prac .glyphicon, .toggler1 .glyphicon{
         padding-top: 12px;
         font-size: 26px;
     }
-}
-
-@media (max-width: 600px) {
     .btnn .glypher{
         padding-top: 12px;
         font-size: 20px;
     }
-}
-
-@media (max-width: 600px) {
     .btn-prac .glyphicon {
         padding-top: 30px;
         font-size: 26px;
     }
-}
-
-@media (max-width: 600px) {
     .btn-prac .nopad, .toggler1 .nopad,.toggler2 .nopad {
         padding-top: 12px;
         font-size: 20px;
     }
 }
-
 
 #icon1, #icon2 {
     margin-top:20px; 
@@ -247,7 +202,6 @@
 
 .btnn, .toggler1, .toggler2, .btn-prac, .btnsave {
     text-transform: uppercase;
-/*    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;*/
     font-weight: 500;
 }
 

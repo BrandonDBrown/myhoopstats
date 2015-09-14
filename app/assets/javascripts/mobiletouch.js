@@ -1,4 +1,3 @@
-//$(document).ready(function(){
 var dmakeft = 0;
 var dtotalft = 0;
 
@@ -30,9 +29,8 @@ document.getElementById("practice_totaljs").value = 0;
 document.getElementById("practice_percentagejs").value = 0;
 
 
+//TOUCH FUNCTIONS
 
-        // define the functions our commands will run.
-//    You have to call either Free Throw or Jump Shot first of Table Breaks
 //    SET FREE THROW
     Hammer(button1).on("tap", function() {
         setme = "Free Throw";
@@ -41,10 +39,11 @@ document.getElementById("practice_percentagejs").value = 0;
         o.set('square-o').size(30);
         o.color('#1a1a1a'); 
         
-        //        BUTTON SOUND
+//        BUTTON SOUND
         $(".click-play")[0].currentTime = 0;
         return $(".click-play")[0].play();
     });
+
 //SET JUMP SHOT
     Hammer(button2).on("tap", function() {
         setme = "Jump Shot";
@@ -53,12 +52,12 @@ document.getElementById("practice_percentagejs").value = 0;
         o.set('square-o').size(30);
         o.color('#1a1a1a');
         
-                //        BUTTON SOUND
+//        BUTTON SOUND
         $(".click-play")[0].currentTime = 0;
         return $(".click-play")[0].play();
     });    
      
-//MAKE FUNCTION
+//MAKE BASKET TOUCH FUNCTION
     Hammer(button3).on("tap", function() {
         if(setme === "Free Throw") {
 
@@ -78,7 +77,7 @@ document.getElementById("practice_percentagejs").value = 0;
         document.getElementById("practice_percentageft").value = ftperct;
 
 
-        //icon stuff
+//button icon stuff
         setTimeout(function() {
         m.set('circle-o');
         }, 250);
@@ -135,7 +134,7 @@ document.getElementById("practice_percentagejs").value = 0;
         }, 300);
         n.set('circle-o-times').size(30);
         
-                        //        BUTTON SOUND
+//        BUTTON SOUND
         $(".miss-play")[0].currentTime = 0;
         return $(".miss-play")[0].play();
             
@@ -191,12 +190,11 @@ document.getElementById("practice_percentagejs").value = 0;
     }); 
 
 
-//VOICE ACTIVATION COMMANDS START
+//VOICE ACTIVATION FUNCTIONS
 
 if (annyang) {
-        // define the functions our commands will run.
     
-    //    SET FREE THROW
+//    SET FREE THROW
     var freeThrow = function() {
         setme = "Free Throw";
         $(".toggler1").addClass('active1');
@@ -204,7 +202,7 @@ if (annyang) {
         o.set('square-o').size(30);
         o.color('#1a1a1a'); 
         
-                //        BUTTON SOUND
+//        BUTTON SOUND
         $(".click-play")[0].currentTime = 0;
         return $(".click-play")[0].play();
     };
@@ -217,7 +215,7 @@ if (annyang) {
         o.set('square-o').size(30);
         o.color('#1a1a1a');
         
-                //        BUTTON SOUND
+//        BUTTON SOUND
         $(".click-play")[0].currentTime = 0;
         return $(".click-play")[0].play();
     };    
@@ -240,7 +238,7 @@ if(setme === "Free Throw") {
         document.getElementById("practice_percentageft").value = ftperct;
 
 
-        //icon stuff
+//button icons
         setTimeout(function() {
         m.set('circle-o');
         }, 250);
@@ -260,7 +258,7 @@ if(setme === "Free Throw") {
         document.getElementById("test3").innerHTML = dmakejs + '/' + dtotaljs;
         document.getElementById("test4").innerHTML = jsperct + '%'; 
             
-        //            ADDING VALUES TO DATABASE FORM
+//            ADDING VALUES TO DATABASE FORM
         document.getElementById("practice_makejs").value = dmakejs;
         document.getElementById("practice_totaljs").value = dtotaljs;
         document.getElementById("practice_percentagejs").value = jsperct;
@@ -270,7 +268,7 @@ if(setme === "Free Throw") {
         }, 250);
         m.set('circle-o-filled').size(30);
             
-        //        BUTTON SOUND
+//        BUTTON SOUND
         $(".audio-play")[0].currentTime = 0;
         return $(".audio-play")[0].play();
         }
@@ -296,7 +294,7 @@ if(setme === "Free Throw") {
         }, 300);
         n.set('circle-o-times').size(30);
         
-                //        BUTTON SOUND
+//        BUTTON SOUND
         $(".miss-play")[0].currentTime = 0;
         return $(".miss-play")[0].play();    
         } else {
@@ -318,7 +316,7 @@ if(setme === "Free Throw") {
         n.set('circle-o-times').size(30);
         }
         
-                        //        BUTTON SOUND
+//        BUTTON SOUND
         $(".miss-play")[0].currentTime = 0;
         return $(".miss-play")[0].play();
     };
@@ -354,7 +352,7 @@ if(setme === "Free Throw") {
     };    
     
     
-// define our commands.
+
 // * The key is what you want your users to say.
 // * The value is the action to do.
 //   You can pass a function, a function name (as a string), or write your function as part of the commands object.
@@ -373,7 +371,7 @@ if(setme === "Free Throw") {
   // Start listening.
   annyang.start({autoRestart: true});
 }
-//});
+
     
 
 
