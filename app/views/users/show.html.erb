@@ -114,8 +114,8 @@
                     
     <%= line_chart [
     {   name: "Free Throw Percentage", 
-        data: @overall.group("percentageft,created_at").having("totalft > 0").sum("percentageft")},           {   name: "Field Goal Percentage", 
-        data: @overall.group("percentagejs,created_at").having("totaljs > 0").sum("percentagejs")}], 
+        data: @overall.group("percentageft,created_at").having("percentageft > 0").sum("percentageft")},           {   name: "Field Goal Percentage", 
+        data: @overall.group("percentagejs,created_at").having("percentagejs > 0").sum("percentagejs")}], 
     {   id: "users-chart1", height: "78vh", 
             library: {         
                 series: {
