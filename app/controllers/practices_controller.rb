@@ -5,11 +5,11 @@ class PracticesController < ApplicationController
     def create 
         @practices = current_user.practices.build(practice_params)      
             if @practices.save
-            flash[:success] = "Data save"
-            redirect_to practice_path(current_user)
+                flash[:success] = "Data save"
+                redirect_to practice_path(current_user)
             else
-            flash[:danger] = "Data not saved"
-            redirect_to(:back)
+                flash[:danger] = "Data not saved"
+                redirect_to(:back)
             end
     end
     
