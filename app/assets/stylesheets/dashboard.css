@@ -38,11 +38,13 @@
 }
 
 .col5o {
-    border-left: 12px solid #59B2E6;
+    border-left: 12px solid #0189C7;
+/*    #59B2E6*/
 }
 
 .col5r {
-    border-left: 12px solid #029f5b;
+    border-left: 12px solid #63b774;
+/*    #029f5b */
 }
 
 .col5o h6, .col5r h6 {
@@ -77,6 +79,7 @@
 
     
 .background-pic2 {
+/*    background-color: #C0C0A8;*/
     background-image: url(courtb.jpg);
     background-position: center;
     -webkit-background-size: cover;
@@ -139,15 +142,15 @@
 }
 
 .dashgrid .activel {
-	color: #59B2E6;
+	color: #0189C7;
 	font-size: 18px;
-    border-bottom: 3px solid #59B2E6; 
+    border-bottom: 3px solid #0189C7; 
 }
 
 .dashgrid .activer {
-	color: #029f5b;
+	color: #63b774;
 	font-size: 18px;
-    border-bottom: 3px solid #029f5b; 
+    border-bottom: 3px solid #63b774; 
 }
 
 /*GRAPHS*/

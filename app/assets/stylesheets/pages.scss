@@ -51,11 +51,11 @@ hr {
     }
 }
 
-#hlogo {
+header img {
     width:200px;
 }
 
-#hlname {
+.header-content-inner div {
     position:absolute;
     font-size:40px;
     font-family: 'bodoqueregular', 'Helvetica Neue',Arial;
@@ -138,7 +138,7 @@ header .header-content .header-content-inner p {
         font-size: 80px;
     }
     
-    #hlname {
+    .header-content-inner div {
         position:absolute;
         font-size:50px;
         font-family: 'bodoqueregular', 'Helvetica Neue',Arial;
@@ -149,11 +149,11 @@ header .header-content .header-content-inner p {
 }
 
 @media(max-width:470px) {
-    #hlogo {
+    header img {
         width:100px;
     }
 
-    #hlname {
+    .header-content-inner div {
         display:none;
     }
 }
@@ -172,13 +172,16 @@ header .header-content .header-content-inner p {
     max-width:300px;
     margin-top:-12px;
 }
+
 .brandlogo img {
     margin-top:-18px;
+    max-width:50px;
 }
 
 @media(max-width:480px) {
     .brandlogo img {
         margin-top:-19px;
+        max-width:50px;
     }
 }
 
@@ -186,6 +189,7 @@ header .header-content .header-content-inner p {
     .brandlogo img {
         display:none;
         position:absolute;
+        max-width:50px;
         
     }  
     .brandname img {
@@ -219,7 +223,7 @@ header .header-content .header-content-inner p {
     font-size:18px;
 }
 
-.hvideo {
+.ycontainer .col-md-6 video {
     margin-top:30px;
 }
 
@@ -230,7 +234,7 @@ header .header-content .header-content-inner p {
   }
 
 @media(max-width:992px) {
-    .hcol-md-4 {
+    .ycontainer .col-md-12 {
         margin-top:45px;
     }
     .xcontainer {
@@ -335,50 +339,14 @@ footer ul li {
 
 .video {
     text-align:center;
-    margin-top:20px;
+    margin-top:-10px;
 }
 
-.tabz {
-    margin-top:0px;   
-}
-
-.head .col-md-12 h1 {
-    margin-top: 0;
-    margin-bottom: 0;
-//  text-transform: uppercase;
-    font-weight: 500;
-    font-size:13vw;
-    text-shadow: 1px 1px #1a1a1a;
-}
-
-.head .col-md-12 hr {
-    margin: 2vh auto;
-
-}
-
-.howto .col-md-6 p {
-    margin-bottom:15px;
-    font-size: 4vh;
-    font-weight: 300;
-    text-shadow: 1px 1px #1a1a1a;
-}
-
-@media(min-width:768px) {
-    .head .col-md-12 hr {
-    margin: 10px auto;
-}
-    .tabz {
-        margin-top:30px;
-    }
-    
+@media(min-width:768px) {    
     .panel-title {
         font-size:20px;
     }
 }
-
-        .head .col-md-12 h1 {
-        font-size: 60px;
-    }
 
 .background-pic7 {
     background-image: url(mobilebknd.png);
@@ -410,7 +378,7 @@ footer ul li {
         font-size:20px;
     }
     
-    .videoz {
+    .ycontainer video {
         width:100px;
     }
 }
@@ -424,7 +392,7 @@ footer ul li {
 
 .contact1 {
     text-align: center;
-    margin-top: 140px;
+    margin-top: 20px;
 }
 
 .contact1 a, .contact p {
@@ -435,16 +403,9 @@ footer ul li {
     margin-bottom:15px;
 }
 
-.foter a {
+footer a {
     color:lightgray;
     height:100%;
-}
-
-#aboutme {
-    width:200px;
-    border-radius:25px;
-    float:left;
-    padding-right:10px;
 }
 
 .contact h1 {

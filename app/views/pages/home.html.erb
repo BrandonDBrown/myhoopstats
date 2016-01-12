@@ -4,9 +4,9 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-            <div id="hlname">MyHoopStats</div>
+            <div>MyHoopStats</div>
                         
-                <%= image_tag("logo1.png", id:"hlogo") %>
+                <%= image_tag("logo1.png") %>
                 <p>The greatest shooters are great because they shoot a lot of shots. Ray Allen shoots around 300 shots before every game. Science has proven that the best way to improve is to set goals and track your progress. MyHoopStats aims to provide you with the means to track your stats using voice commands, set goals and see your progress over time</p>
             <% if logged_in? %>
               <% else %>
@@ -20,7 +20,7 @@
     <div class="container ycontainer">
       <div class="row">
           <div class="col-md-6">
-            <div class="col-lg-12 col-md-12 col-sm-12 hcol-md-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <h2>Track Stats</h2>
                 <span class="fa-stack fa-3x">
                     <i class="fa fa-square fa-stack-2x"></i>
@@ -28,7 +28,7 @@
                 </span>
                 <p>Use MyHoopStats to track your free throw and field goal percentage overtime and set goals to improve your performance.</p>              
             </div>
-            <div class="col-lg-12 col-md-12 hcol-md-4">
+            <div class="col-lg-12 col-md-12">
                 <h2>Voice Activated</h2>
                 <span class="fa-stack fa-3x">
                     <i class="fa fa-square fa-stack-2x"></i>
@@ -36,7 +36,7 @@
                 </span>    
                 <p>For Android users, use simple voice commands to track your progress.</p>
             </div>
-            <div class="col-lg-12 col-md-12 hcol-md-4">
+            <div class="col-lg-12 col-md-12">
                 <h2>Web App</h2>
                 <span class="fa-stack fa-3x">
                     <i class="fa fa-square fa-stack-2x"></i>
@@ -45,11 +45,12 @@
                 <p>Simply access MyHoopStats on your phones web browser and track whether you are at the gym or the park.</p>
             </div>
           </div>
-          <div class="col-md-6 col-sm-12 hvideo">
-            <%= video_tag(["features.mov","features.mp4"], controls: true, size: "350x510", class: "videoz") %>
+          <div class="col-md-6 col-sm-12">
+            <%= video_tag(["features.mov","features.mp4"], controls: true, size: "350x510") %>
           </div>
       </div>
-    </div> <!-- /ycontainer -->
+    </div> 
+<!-- /ycontainer -->
 
 <!--Contact row-->
     <div class="container xcontainer">
@@ -63,7 +64,8 @@
           <a href="myhoopstats@gmail.com">myhoopstats@gmail.com</a>
         </div>
       </div>
-    </div> <!-- /xcontainer --> 
+    </div> 
+<!-- /xcontainer --> 
 
 <!--Footer row-->
     <div class="container">

@@ -17,7 +17,6 @@ class UsersController < ApplicationController
         @datejs = @overall.select("makejs, created_at").last
         @overallpercft = ((@overall.sum(:makeft).to_f/@overall.sum(:totalft).to_f)*100)
         @overallpercjs = ((@overall.sum(:makejs).to_f/@overall.sum(:totaljs).to_f)*100)
-        #        @ifblank = @overall.pluck(:totalft).blank?
     end
     
     def new
