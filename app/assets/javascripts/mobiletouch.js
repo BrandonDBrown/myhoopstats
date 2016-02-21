@@ -401,7 +401,7 @@ if(setme === "Free Throw") {
   annyang.addCommands(commands);
 
   // Start listening.
-  annyang.start({autoRestart: true});
+  annyang.start({autoRestart: true, continuous: true});
 }
 
 
