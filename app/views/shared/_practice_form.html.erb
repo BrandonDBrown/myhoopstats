@@ -1,30 +1,12 @@
 <%= form_for(@practice, remote: true) do |f| %>
-<div style="display:none;">
-<div>
-    <%= f.hidden_field :makeft %>
-</div>
-<div>
-    <%= f.hidden_field :totalft %>
-</div>
-<div>
-    <%= f.hidden_field :percentageft %>
-</div>
-<div>
-    <%= f.hidden_field :makejs %>
-</div>
-<div>
-    <%= f.hidden_field :totaljs %>
-</div>
-<div>
-    <%= f.hidden_field :percentagejs %>
-</div>
-</div>
-
-<%= audio_tag "save.mp3", class: "save-play" %>
-
-<%= button_tag(:class => "btn btnsave", :id => "button5") do %>          
-<i id="icon3"></i><br>Save 
-<% end %>
-
+<%= f.hidden_field :makeft %>
+<%= f.hidden_field :totalft %>
+<%= f.hidden_field :percentageft %>
+<%= f.hidden_field :makejs %>
+<%= f.hidden_field :totaljs %>
+<%= f.hidden_field :percentagejs %>
+	<%= audio_tag "save.mp3", class: "save-play" %>
+	<%= button_tag(:class => "btn btnsave", :id => "button5") do %>      	<i id="icon3"></i><br>SAVE 
+	<% end %>
 <% end %>
 

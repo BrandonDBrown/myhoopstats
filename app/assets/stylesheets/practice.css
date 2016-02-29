@@ -1,207 +1,93 @@
-@media (min-width: 100px) {
-  .navcontainer {
-    width: 100%;
-  }
-}
-
-@media (min-width: 1170px) {
-  .navcontainer {
-    width: 1170px;
-  }
-}
-
 .bg {
-    background-image:url(ccourt.png);
-    background-size:cover;
-      /* Set rules to fill background */
+	background-color:#222222;
+  /* Set rules to fill background */
   min-height: 150%;
   min-width: 1024px;
-	
   /* Set up proportionate scaling */
   width: 100%;
-  height: auto;
   /* Set up positioning */
-  position: fixed;
-  top:-170px;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  position: fixed; 
 }
 
 .scontainer {
-    background-color:black;
-    width:40em;
-    margin-top:60px;
-
-}
-
-@media (max-width: 700px) {
-    .scontainer {
-        width:100%;
-        margin-top:0px; 
-    }
-}
-
-.navbar {
-    border:none;
+    width:100%;
+    margin-top:0px; 
 }
 
 /*PRACTICE BUTTONS*/
-
-.btn-prac:focus{
-    outline: none;
-    border-radius:0;   
-}
-
-.toggler1:focus, .toggler2:focus {
-    outline: none;   
-}
-
-.btnn {
-    background-color: #fff;
-    border: 1px solid #e0e1db;
-    -webkit-box-sizing: border-box;  
-    /*Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;     
-    /*Firefox, other Gecko */
-    box-sizing: border-box;          
-    /*Opera/IE 8+ */
-    border-radius:0;
-}
-
-.toggler1, .toggler2{
-    background-color:lightgrey;
-    border: 1px solid #e0e1db;
-    -webkit-box-sizing: border-box;  
-    /*Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;     
-    /*Firefox, other Gecko */
-    box-sizing: border-box;          
-    /*Opera/IE 8+ */
-    color:#1a1a1a;
-    border-radius:0;
-}
-
 .btn-prac {
     background-color:lightgrey;
     border: 1px solid #e0e1db;
-    -webkit-box-sizing: border-box;  
-    /*Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;     
-    /*Firefox, other Gecko */
-    box-sizing: border-box;          
-    /*Opera/IE 8+ */
-    color:#1a1a1a;
     border-radius:0;
-    height:200px;
+    height:300px;
 }
 
-
-
-@media (max-width: 700px) {
-    .btn-prac {
-        height:50vh;
-    }
-    .toggler1, .toggler2 {
-        height:5em;   
-    }
-    .btnsave {
-        height:5em;   
-    }
+.btn-prac:focus {
+    outline: none;
 }
 
+/*REFACTOR*/
+.col-xs-3 {
+	background-color:white;
+	border: 1px solid #e0e1db;
+}
+
+.col-xs-3 p {
+	color:#1a1a1a;
+	text-align:center;
+}
+
+.col-xs-3 p:first-child {
+	font-size:20px;
+	padding-top: 12px;
+	padding-bottom:0px;
+}
+
+.col-xs-3 p:nth-child(2)  {
+	font-size:13px;
+	padding-top:-10px;
+	padding-bottom: 4px;
+}
+
+.btn-group label {
+	height:70px;
+	font-size:20px;
+	background-color:lightgrey;
+	border:none;
+	color:#1a1a1a;
+	border-radius: 0px;
+}
+
+.btn-group .active,
+.btn-group label:active,
+.btn-group label:hover {
+	border-top: 6px solid #f05f40;
+	background-color:grey;
+	color:white;
+}
+
+/*REFACTOR CSS END*/
 
 .btnsave {
     background-color:lightgrey; 
     border-radius:0;
-}
-
-.btnn {
-    cursor: default;
-}
-
-.toggler1.active1, .toggler2.active1 {
-    color: #1a1a1a;
-    padding: 2px;
-	border-top: 6px solid #f05f40;
-    border-left: 0;
-    border-right: 0;
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -webkit-box-sizing:border-box;
-    -webkit-transition: border 0.3s ease-out, color 0.3s ease 0.5s;
-    -moz-transition: border 0.3s ease-out, color 0.3s ease 0.5s;
-    -ms-transition: border 0.3s ease-out, color 0.3s ease 0.5s;  
-/*    IE10 is actually unprefixed */
-    -o-transition: border 0.3s ease-out, color 0.3s ease 0.5s;
-    transition: border 0.3s ease-out, color 0.3s ease 0.5s;
-    -webkit-transition: color 1s; /* For Safari 3.1 to 6.0 */
-    transition: color 1s;
-    color: white;
-    cursor: pointer;
-    background-color:gray;
-    -webkit-transition: background-color 1s; /* For Safari 3.1 to 6.0 */
-    transition: background-color 1s;
-}
-
-.btn-prac.active1:before, .toggler1.active1:before, .toggler2.active1:before{
-	content: '';
-	position: absolute;
-	border-style: solid;
-	border-width: 6px 6px 0;
-	border-color: #f05f40 transparent;
-	display: block;
-	width: 0;
-	z-index: 1;
-	margin-left: -6px;
-	top: 0;
-	left: 50%;
-}
-.btn-prac .glyphicon, .toggler1 .glyphicon,.toggler2 .glyphicon{
-    padding-top: 16px;
-	font-size: 40px;
-}
-
-.btnn .glypher {
-    padding-top: 16px;
-	font-size: 30px;
-    text-align:center;
-}
-
-.btn-prac .nopad, .toggler1 .nopad, .toggler2 .nopad {
-    padding-top: 16px;
-	font-size: 30px;
-}
-
-@media (max-width: 600px) {
-    .btn-prac .glyphicon, .toggler1 .glyphicon{
-        padding-top: 12px;
-        font-size: 26px;
-    }
-    .btnn .glypher{
-        padding-top: 12px;
-        font-size: 20px;
-    }
-    .btn-prac .glyphicon {
-        padding-top: 30px;
-        font-size: 26px;
-    }
-    .btn-prac .nopad, .toggler1 .nopad,.toggler2 .nopad {
-        padding-top: 12px;
-        font-size: 20px;
-    }
+		height:70px;
 }
 
 #icon1, #icon2 {
-    margin-top:20px; 
     margin-bottom:11px;
 }
 
-.btnn, .toggler1, .toggler2, .btn-prac, .btnsave {
-    text-transform: uppercase;
+.btn-prac, .btnsave {
     font-weight: 500;
+}
+
+/*WEBSITE VERSION*/
+@media (min-width: 700px) {
+    .scontainer { 
+			width:40em;
+    	margin-top:50px;
+    }
 }
 
 

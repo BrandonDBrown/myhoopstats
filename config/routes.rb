@@ -17,8 +17,7 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :microposts, only: [:create, :destroy]
-  resources :practices, only: [:create, :update, :edit]
+  resources :practices, only: [:create]
   
 # EX <%= link_to "About", about_path %>
     

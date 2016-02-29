@@ -1,8 +1,5 @@
-var dmakeft = 0;
-var dtotalft = 0;
-
-var dmakejs = 0;
-var dtotaljs = 0;
+//ARRAY[makeft, totalft, ftperc, makejs, totaljs, jsperc]
+var action = new Array(6).fill(0)
 
 var m = new Marka('#icon1');
 m.set('circle-o').size(30);
@@ -12,221 +9,33 @@ n.set('circle-o').size(30);
 
 var o = new Marka('#icon3');
 o.set('square-o').size(30);
-$(".toggler1").addClass('active1');
-var setme = "Free Throw";
 
-var button1 = document.getElementById('button1');
-var button2 = document.getElementById('button2');
-var button3 = document.getElementById('button3');
-var button4 = document.getElementById('button4');
-var button5 = document.getElementById('button5');
-
-document.getElementById("practice_makeft").value = 0;
-document.getElementById("practice_totalft").value = 0;
-document.getElementById("practice_percentageft").value = 0;
-document.getElementById("practice_makejs").value = 0;
-document.getElementById("practice_totaljs").value = 0;
-document.getElementById("practice_percentagejs").value = 0;
-
-
+if (annyang) {
 //TOUCH FUNCTIONS
 
 //    SET FREE THROW
-    Hammer(button1).on("tap", function() {
-        setme = "Free Throw";
-        $(".toggler1").addClass('active1');
-        $(".toggler2").removeClass('active1');
+$("#option1").on("click", freeThrow)
+$("#option2").on("click", jShot)
+$("#button3").on("click", make)
+$("#button4").on("click", miss)
+
+
+function freeThrow() {
+				$("#option1").addClass('active');
+				$("#option2").removeClass('active');		
         o.set('square-o').size(30);
         o.color('#1a1a1a'); 
         
 //        BUTTON SOUND
         $(".click-play")[0].currentTime = 0;
         return $(".click-play")[0].play();
-    });
-
-//SET JUMP SHOT
-    Hammer(button2).on("tap", function() {
-        setme = "Jump Shot";
-        $(".toggler2").addClass('active1');
-        $(".toggler1").removeClass('active1');
-        o.set('square-o').size(30);
-        o.color('#1a1a1a');
-        
-//        BUTTON SOUND
-        $(".click-play")[0].currentTime = 0;
-        return $(".click-play")[0].play();
-    });    
-     
-//MAKE BASKET TOUCH FUNCTION
-    Hammer(button3).on("tap", function() {
-        if(setme === "Free Throw") {
-        dmakeft = dmakeft + 1;
-        dtotalft = dtotalft + 1;
-        var ftperc = (dmakeft / dtotalft) * 100;
-        var ftperct = Math.round(ftperc);
-        var jsperc = (dmakejs / dtotaljs) * 100;
-        var jsperct = Math.round(jsperc);
-            
-        document.getElementById("test1").innerHTML = dmakeft + '/' + dtotalft;
-        document.getElementById("test2").innerHTML = ftperct + '%';
-            
-//ADDING VALUES TO DATABASE FORM
-        document.getElementById("practice_makeft").value = dmakeft;
-        document.getElementById("practice_totalft").value = dtotalft;
-        document.getElementById("practice_percentageft").value = ftperct;
-
-        $('#button5').removeClass('disabled');
-//button icon stuff
-        setTimeout(function() {
-        m.set('circle-o');
-        }, 250);
-        m.set('circle-o-filled').size(30);
-        
-//        BUTTON SOUND
-        $(".audio-play")[0].currentTime = 0;
-        return $(".audio-play")[0].play();
-            
-        } else {
-            
-        dmakejs = dmakejs + 1;
-        dtotaljs = dtotaljs + 1;
-        var jsperc = (dmakejs / dtotaljs) * 100;
-        var jsperct = Math.round(jsperc);
-            
-        document.getElementById("test3").innerHTML = dmakejs + '/' + dtotaljs;
-        document.getElementById("test4").innerHTML = jsperct + '%'; 
-            
-        //            ADDING VALUES TO DATABASE FORM
-        document.getElementById("practice_makejs").value = dmakejs;
-        document.getElementById("practice_totaljs").value = dtotaljs;
-        document.getElementById("practice_percentagejs").value = jsperct;
-        
-        setTimeout(function() {
-        m.set('circle-o');
-        }, 250);
-        m.set('circle-o-filled').size(30);
-        }
-        
-        $('#button5').removeClass('disabled');
-//        BUTTON SOUND
-        $(".audio-play")[0].currentTime = 0;
-        return $(".audio-play")[0].play();
-    });
-
-//MISS FUNCTION  
-    Hammer(button4).on("tap", function() {
-        if(setme === "Free Throw") {
-            
-        dtotalft = dtotalft +1;
-        var ftperc = (dmakeft / dtotalft) * 100;
-        var ftperct = Math.round(ftperc);
-
-        
-        document.getElementById("test1").innerHTML = dmakeft + '/' + dtotalft;
-        document.getElementById("test2").innerHTML = ftperct + '%';
-            
-//ADDING VALUES TO DATABASE FORM
-        document.getElementById("practice_totalft").value = dtotalft;
-        document.getElementById("practice_percentageft").value = ftperct;
-            
-        setTimeout(function() {
-        n.set('circle-o');
-        }, 300);
-        n.set('circle-o-times').size(30);
-            
-        $('#button5').removeClass('disabled');
-        
-//        BUTTON SOUND
-        $(".miss-play")[0].currentTime = 0;
-        return $(".miss-play")[0].play();
-            
-        } else {
-        
-        dtotaljs = dtotaljs +1;
-        var jsperc = (dmakejs / dtotaljs) * 100;
-        var jsperct = Math.round(jsperc);
-            
-        document.getElementById("test3").innerHTML = dmakejs + '/' + dtotaljs;
-        document.getElementById("test4").innerHTML = jsperct + '%'; 
-            
- //ADDING VALUES TO DATABASE FORM
-        document.getElementById("practice_totaljs").value = dtotaljs;
-        document.getElementById("practice_percentagejs").value = jsperct;
-            
-        setTimeout(function() {
-        n.set('circle-o');
-        }, 300);
-        n.set('circle-o-times').size(30);
-        }
-        
-        $('#button5').removeClass('disabled');
-         //        BUTTON SOUND
-        $(".miss-play")[0].currentTime = 0;
-        return $(".miss-play")[0].play();
-    });
-
-//SAVE FUNCTION
-    Hammer(button5).on("tap", function() {
-        //        Reset
-        dmakeft = 0;
-        dtotalft = 0;
-        ftperct = 0;
-        ftperc = 0;
-        dmakejs = 0;
-        dtotaljs = 0;
-        jsperct = 0;
-        jsperc = 0;
-                        
-        setTimeout(function() {
-        o.set('square-check').size(30);
-        o.color('green');
-        }, 100);
-            
-        document.getElementById("test1").innerHTML = '0';
-        document.getElementById("test2").innerHTML = '0';
-        document.getElementById("test3").innerHTML = '0';
-        document.getElementById("test4").innerHTML = '0'; 
-        
-        //Resetting Rails form fields to zero
-        setTimeout(function(){
-        document.getElementById("practice_makejs").value = dmakejs;
-        document.getElementById("practice_totaljs").value = dtotaljs;
-        document.getElementById("practice_percentagejs").value = jsperct;
-        document.getElementById("practice_makeft").value = dmakeft;
-        document.getElementById("practice_totalft").value = dtotalft;
-        document.getElementById("practice_percentageft").value = ftperct;},
-        1000);
-        
-         $('#button5').addClass('disabled');
-        
-//                BUTTON SOUND
-        $(".save-play")[0].currentTime = 0;
-        return $(".save-play")[0].play();
-    }); 
-
-
-//VOICE ACTIVATION FUNCTIONS
-
-if (annyang) {
-    
-//    SET FREE THROW
-    var freeThrow = function() {
-        setme = "Free Throw";
-        $(".toggler1").addClass('active1');
-        $(".toggler2").removeClass('active1');
-        o.set('square-o').size(30);
-        o.color('#1a1a1a'); 
-        
-//        BUTTON SOUND
-        $(".click-play")[0].currentTime = 0;
-        return $(".click-play")[0].play();
+				
     };
 
 //SET JUMP SHOT
-    var jShot = function() {
-        setme = "Jump Shot";
-        $(".toggler2").addClass('active1');
-        $(".toggler1").removeClass('active1');
+function jShot() {
+				$("#option2").addClass('active');
+				$("#option1").removeClass('active');
         o.set('square-o').size(30);
         o.color('#1a1a1a');
         
@@ -234,77 +43,54 @@ if (annyang) {
         $(".click-play")[0].currentTime = 0;
         return $(".click-play")[0].play();
     };    
+     
+//MAKE BASKET TOUCH FUNCTION
+function make(){
+  	if($("#option1").hasClass('active')) {
+			for (i=0;i<2;i++){ action[i] += 1 }
+      action[2] = Math.round((action[0] / action[1]) * 100);   
+      document.getElementById("test1").innerHTML = action[0] + '/' + action[1];
+      document.getElementById("test2").innerHTML = action[2] + '%';
+            
+      $('#button5').removeClass('disabled');
+			
+			//button icon stuff
+       setTimeout(function() {
+       m.set('circle-o');
+       }, 250);
+       m.set('circle-o-filled').size(30);
         
-    var make = function() {
-if(setme === "Free Throw") {
-        dmakeft = dmakeft + 1;
-        dtotalft = dtotalft + 1;
-        var ftperc = (dmakeft / dtotalft) * 100;
-        var ftperct = Math.round(ftperc);
-        var jsperc = (dmakejs / dtotaljs) * 100;
-        var jsperct = Math.round(jsperc);
-            
-        document.getElementById("test1").innerHTML = dmakeft + '/' + dtotalft;
-        document.getElementById("test2").innerHTML = ftperct + '%';
-            
-//ADDING VALUES TO DATABASE FORM
-        document.getElementById("practice_makeft").value = dmakeft;
-        document.getElementById("practice_totalft").value = dtotalft;
-        document.getElementById("practice_percentageft").value = ftperct;
-
-
-//button icons
-        setTimeout(function() {
-        m.set('circle-o');
-        }, 250);
-        m.set('circle-o-filled').size(30);
-    
-        $('#button5').removeClass('disabled');
-        
-        //        BUTTON SOUND
-        $(".audio-play")[0].currentTime = 0;
-        return $(".audio-play")[0].play();
-    
-        } else {
-        dmakejs = dmakejs + 1;
-        dtotaljs = dtotaljs + 1;
-        var jsperc = (dmakejs / dtotaljs) * 100;
-        var jsperct = Math.round(jsperc);
-            
-        document.getElementById("test3").innerHTML = dmakejs + '/' + dtotaljs;
-        document.getElementById("test4").innerHTML = jsperct + '%'; 
-            
-//            ADDING VALUES TO DATABASE FORM
-        document.getElementById("practice_makejs").value = dmakejs;
-        document.getElementById("practice_totaljs").value = dtotaljs;
-        document.getElementById("practice_percentagejs").value = jsperct;
-        
-        setTimeout(function() {
-        m.set('circle-o');
-        }, 250);
-        m.set('circle-o-filled').size(30);
-            
-        $('#button5').removeClass('disabled');
-            
 //        BUTTON SOUND
         $(".audio-play")[0].currentTime = 0;
         return $(".audio-play")[0].play();
-        }
+            
+        } else {
+        	for (i=3;i<5;i++){ action[i] += 1 }
+        	action[5] = Math.round((action[3] / action[4]) * 100);
+            
+        	document.getElementById("test3").innerHTML = action[3] + '/' + action[4];
+        	document.getElementById("test4").innerHTML = action[5] + '%'; 
+        
+					setTimeout(function() {
+					m.set('circle-o');
+					}, 250);
+					m.set('circle-o-filled').size(30);
+					}
+
+					$('#button5').removeClass('disabled');
+					//BUTTON SOUND
+					$(".audio-play")[0].currentTime = 0;
+					return $(".audio-play")[0].play();
     };
-    
-    var miss = function() {
-        if(setme === "Free Throw") {
-            dtotalft = dtotalft +1;
-            var ftperc = (dmakeft / dtotalft) * 100;
-            var ftperct = Math.round(ftperc);
-
-        
-        document.getElementById("test1").innerHTML = dmakeft + '/' + dtotalft;
-        document.getElementById("test2").innerHTML = ftperct + '%';
-            
-//ADDING VALUES TO DATABASE FORM
-        document.getElementById("practice_totalft").value = dtotalft;
-        document.getElementById("practice_percentageft").value = ftperct;
+	
+//MISS FUNCTION  
+function miss() {
+      if($("#option1").hasClass('active')) {
+        action[1] += 1;
+        action[2] = Math.round((action[0] / action[1]) * 100);
+				
+        document.getElementById("test1").innerHTML = action[0] + '/' + action[1];
+        document.getElementById("test2").innerHTML = action[2] + '%';
             
         setTimeout(function() {
         n.set('circle-o');
@@ -313,72 +99,86 @@ if(setme === "Free Throw") {
             
         $('#button5').removeClass('disabled');
         
-//        BUTTON SOUND
-        $(".miss-play")[0].currentTime = 0;
-        return $(".miss-play")[0].play();    
-        } else {
-        dtotaljs = dtotaljs +1;
-        var jsperc = (dmakejs / dtotaljs) * 100;
-        var jsperct = Math.round(jsperc);
-            
-        document.getElementById("test3").innerHTML = dmakejs + '/' + dtotaljs;
-        document.getElementById("test4").innerHTML = jsperct + '%'; 
-            
- //ADDING VALUES TO DATABASE FORM
-        document.getElementById("practice_totaljs").value = dtotaljs;
-        document.getElementById("practice_percentagejs").value = jsperct;
-            
-        setTimeout(function() {
-        n.set('circle-o');
-        }, 300);
-        n.set('circle-o-times').size(30);
-        }
-        
-        $('#button5').removeClass('disabled');
 //        BUTTON SOUND
         $(".miss-play")[0].currentTime = 0;
         return $(".miss-play")[0].play();
+            
+        } else {
+					action[4] += 1;
+					action[5] = Math.round((action[3] / action[4]) * 100);
+
+					document.getElementById("test3").innerHTML = action[3] + '/' + action[4];
+					document.getElementById("test4").innerHTML = action[5] + '%'; 
+
+					setTimeout(function() {
+					n.set('circle-o');
+					}, 300);
+					n.set('circle-o-times').size(30);
+					}
+
+					$('#button5').removeClass('disabled');
+					 //        BUTTON SOUND
+					$(".miss-play")[0].currentTime = 0;
+					return $(".miss-play")[0].play();
     };
 
-    
 //SAVE FUNCTION
-    
-    var save = function() {
-				document.getElementById("button5").click();
-//        Reset
-        dmakeft = 0;
-        dtotalft = 0;
-        ftperct = 0;
-        ftperc = 0;
-        dmakejs = 0;
-        dtotaljs = 0;
-        jsperct = 0;
-        jsperc = 0;
-                        
+$("#button5").on("click", function() {
+				$("#practice_makeft").val(action[0]);
+				$("#practice_totalft").val(action[1]);
+				$("#practice_percentageft").val(action[2]);
+				$("#practice_makejs").val(action[3]);
+				$("#practice_totaljs").val(action[4]);
+				$("#practice_percentagejs").val(action[5]);
+
+        //        Reset
+				for (i=0;i<action.length;i++){ action[i] = 0 }
+        $( ".col-xs-3 :first-child" ).html('0')
+				
         setTimeout(function() {
         o.set('square-check').size(30);
         o.color('green');
         }, 100);
-            
-        document.getElementById("test1").innerHTML = '0';
-        document.getElementById("test2").innerHTML = '0';
-        document.getElementById("test3").innerHTML = '0';
-        document.getElementById("test4").innerHTML = '0';
-                
-        //Resetting Rails form fields to zero
-        setTimeout(function(){
-        document.getElementById("practice_makejs").value = dmakejs;
-        document.getElementById("practice_totaljs").value = dtotaljs;
-        document.getElementById("practice_percentagejs").value = jsperct;
-        document.getElementById("practice_makeft").value = dmakeft;
-        document.getElementById("practice_totalft").value = dtotalft;
-        document.getElementById("practice_percentageft").value = ftperct;},
-        1000);
+				
+				//Resetting Rails form fields to zero
+				setTimeout(function() {
+					$('.new_practice').children().val(0)},1000)
         
-        $('#button5').addClass('disabled');
+         $('#button5').addClass('disabled');
+        
+				//BUTTON SOUND
+        $(".save-play")[0].currentTime = 0;
+        return $(".save-play")[0].play();
+    }); 
 
+	
+//SAVE FUNCTION
+    
+    var save = function() {
+				$("#button5").click();
+				$("#practice_makeft").val(action[0]);
+				$("#practice_totalft").val(action[1]);
+				$("#practice_percentageft").val(action[2]);
+				$("#practice_makejs").val(action[3]);
+				$("#practice_totaljs").val(action[4]);
+				$("#practice_percentagejs").val(action[5]);
+
+        //        Reset
+				for (i=0;i<action.length;i++){ action[i] = 0 }
+        $( ".col-xs-3 :first-child" ).html('0')
+				
+        setTimeout(function() {
+        o.set('square-check').size(30);
+        o.color('green');
+        }, 100);
+				
+				//Resetting Rails form fields to zero
+				setTimeout(function() {
+					$('.new_practice').children().val(0)},1000)
         
-//                BUTTON SOUND
+         $('#button5').addClass('disabled');
+        
+				//BUTTON SOUND
         $(".save-play")[0].currentTime = 0;
         return $(".save-play")[0].play();
     };    

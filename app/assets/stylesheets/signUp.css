@@ -75,7 +75,7 @@
 }
 .forgot-password {
 	text-decoration: underline;
-	color: #888;
+	color: #888; 
 }
 .forgot-password:hover,
 .forgot-password:focus {

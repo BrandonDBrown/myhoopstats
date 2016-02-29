@@ -1,5 +1,7 @@
 {
     "jscodehints.detectedExclusions": [
-        "/Users/brandonbrown/shot_tracker_new/app/assets/javascripts/app.js.erb"
+        "/Users/brandonbrown/shot_tracker_new/app/assets/javascripts/app.js.erb",
+        "/Users/brandonbrown/shot_tracker_new/public/assets/mobiletouch-da054cdfbf42570dd979bebe472b86029fd2e8fa4c60343ea606b1e7906d6185.js",
+        "/Users/brandonbrown/shot_tracker_new/app/assets/javascripts/mobiletouch.js"
     ]
 }
